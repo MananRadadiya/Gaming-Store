@@ -1,0 +1,37 @@
+You are a senior frontend architect and UI/UX designer.
+
+Upgrade this existing React + Vite + Tailwind gaming e-commerce project into a premium, startup-level, visually stunning website.
+
+Do NOT rewrite everything.
+Refactor and enhance the existing structure.
+
+Goals:
+
+1. Improve spacing, layout alignment, and visual hierarchy.
+
+3. Add premium glassmorphism effects (backdrop-blur, soft borders, subtle gradients).
+4. Improve typography scale (bold headings, clean subtext, proper tracking).
+5. Add smooth Framer Motion animations (fade-up, staggered cards, hover scale).
+6. Improve product cards with:
+   - Clean shadow layering
+   - Hover elevation
+   - Smooth image zoom
+   - Premium badges
+7. Improve navbar:
+   - Sticky, pill-shaped, glass style
+   - Smooth dropdown animations
+   - Proper spacing between elements
+8. Make UI feel like a funded startup (Razer / high-end gaming brand quality).
+9. Ensure perfect dark mode styling.
+10. Maintain full responsiveness (mobile-first).
+
+Keep the design minimal, modern, high-contrast, and premium.
+Do not break functionality.
+Focus on UI refinement and polish.
+
+git init
+git add .
+git commit -m "class/home"
+git branch -M main
+git remote add origin https://github.com/MananRadadiya/Gaming-Store.git
+git push -u origin main

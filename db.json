@@ -1,0 +1,1340 @@
+{
+  "keyboards": [
+    {
+      "id": 1,
+      "title": "Huntsman V3 Pro",
+      "brand": "Razer",
+      "price": 249.99,
+      "discountPrice": 219.99,
+      "rating": 4.8,
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1595225476933-0efb8831d63f?w=600",
+        "https://images.unsplash.com/photo-1587829162019-a19fb43fe4f5?w=600"
+      ],
+      "category": "keyboards",
+      "badge": "Pro",
+      "description": "The world's fastest mechanical keyboard with adjustable analog optical switches. Supports both gaming and typing with lightning-fast response times.",
+      "features": ["Analog Optical Switches", "Per-Key RGB", "Adjustable Actuation (0.1-4.0mm)", "USB-C Connection", "Magnetic Wrist Rest"],
+      "specs": {
+        "switches": "Razer Analog Optical",
+        "layout": "Full-size",
+        "lighting": "Per-key RGB",
+        "actuation": "0.1-4.0mm adjustable",
+        "polling": "8000Hz",
+        "interface": "USB-C"
+      }
+    },
+    {
+      "id": 2,
+      "title": "K100 RGB",
+      "brand": "Corsair",
+      "price": 229.99,
+      "discountPrice": 199.99,
+      "rating": 4.7,
+      "stock": 31,
+      "images": [
+        "https://images.unsplash.com/photo-1587829162019-a19fb43fe4f5?w=600",
+        "https://images.unsplash.com/photo-1595225476933-0efb8831d63f?w=600"
+      ],
+      "category": "keyboards",
+      "badge": "Best Seller",
+      "description": "Premium flagship keyboard with iCUE control wheel and per-key RGB lighting. Designed for streamers and competitive gamers.",
+      "features": ["OPX Optical Switches", "iCUE Control Wheel", "Per-Key RGB + LightEdge", "Detachable USB-C", "Aircraft Grade Aluminum"],
+      "specs": {
+        "switches": "Corsair OPX Optical",
+        "layout": "Full-size",
+        "lighting": "Per-key RGB + LightEdge",
+        "actuation": "1.0mm",
+        "polling": "8000Hz",
+        "construction": "Aluminum"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Apex Pro TKL",
+      "brand": "SteelSeries",
+      "price": 189.99,
+      "discountPrice": 169.99,
+      "rating": 4.9,
+      "stock": 42,
+      "images": [
+        "https://images.unsplash.com/photo-1595225476933-0efb8831d63f?w=600",
+        "https://images.unsplash.com/photo-1587829162019-a19fb43fe4f5?w=600"
+      ],
+      "category": "keyboards",
+      "description": "The world's fastest mechanical keyboard with adjustable per-key actuation and integrated OLED smart display for live stats.",
+      "features": ["OmniPoint 2.0 Switches", "Adjustable Actuation Per-Key", "OLED Screen", "Per-Key RGB", "Compact TKL Layout"],
+      "specs": {
+        "switches": "SteelSeries OmniPoint 2.0",
+        "layout": "Tenkeyless (TKL)",
+        "lighting": "Per-key RGB",
+        "actuation": "0.2-3.8mm adjustable",
+        "display": "OLED Smart Screen",
+        "polling": "8000Hz"
+      }
+    },
+    {
+      "id": 4,
+      "title": "G915 X Lightspeed",
+      "brand": "Logitech",
+      "price": 279.99,
+      "discountPrice": 249.99,
+      "rating": 4.6,
+      "stock": 18,
+      "images": [
+        "https://images.unsplash.com/photo-1587829162019-a19fb43fe4f5?w=600",
+        "https://images.unsplash.com/photo-1595225476933-0efb8831d63f?w=600"
+      ],
+      "category": "keyboards",
+      "badge": "New",
+      "description": "Ultra-thin wireless mechanical keyboard with LIGHTSPEED technology for zero-lag gaming and extended 36-hour battery life.",
+      "features": ["Low Profile GL Switches", "LIGHTSPEED Wireless", "36hr Battery", "LIGHTSYNC RGB", "Ultra-Thin Design"],
+      "specs": {
+        "switches": "Logitech GL Low Profile",
+        "layout": "Full-size",
+        "connectivity": "LIGHTSPEED (2.4GHz)",
+        "battery": "36 hours",
+        "lighting": "LIGHTSYNC RGB",
+        "polling": "8000Hz"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Vulcan 122 AURA",
+      "brand": "ROCCAT",
+      "price": 159.99,
+      "discountPrice": 139.99,
+      "rating": 4.5,
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1595225476933-0efb8831d63f?w=600",
+        "https://images.unsplash.com/photo-1587829162019-a19fb43fe4f5?w=600"
+      ],
+      "category": "keyboards",
+      "description": "High-performance gaming keyboard with Titan Switch technology and customizable per-key RGB lighting for maximum control.",
+      "features": ["Titan Optical Switches", "Per-Key RGB", "Programmable Macro Keys", "Detachable USB-C", "EasyShift+ Technology"],
+      "specs": {
+        "switches": "ROCCAT Titan Optical",
+        "layout": "Full-size",
+        "lighting": "Per-key RGB",
+        "actuation": "1.8mm",
+        "polling": "8000Hz",
+        "connection": "USB-C"
+      }
+    }
+  ],
+  "mouse": [
+    {
+      "id": 6,
+      "title": "DeathAdder V3 Pro",
+      "brand": "Razer",
+      "price": 159.99,
+      "discountPrice": 139.99,
+      "rating": 4.8,
+      "stock": 55,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+      ],
+      "category": "mouse",
+      "badge": "Pro",
+      "description": "The legendary DeathAdder refined to perfection at just 63g with Focus Pro 30K sensor for ultimate esports precision.",
+      "features": ["30K DPI Sensor", "63g Weight", "Optical Switches Gen-3", "Wireless 2.4GHz", "90-hour Battery"],
+      "specs": {
+        "sensor": "Razer Focus Pro 30K",
+        "dpi": "30,000",
+        "weight": "63g",
+        "switches": "Optical Gen-3",
+        "battery": "90 hours",
+        "polling": "8000Hz"
+      }
+    },
+    {
+      "id": 7,
+      "title": "G Pro X Superlight 2",
+      "brand": "Logitech",
+      "price": 159.99,
+      "discountPrice": 144.99,
+      "rating": 4.9,
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+      ],
+      "category": "mouse",
+      "badge": "Best Seller",
+      "description": "The ultimate esports mouse used by pro gamers worldwide. Now even lighter at 60g with advanced HERO 2 sensor.",
+      "features": ["HERO 2 Sensor", "32K DPI", "60g Weight", "LIGHTFORCE Switches", "95-hour Battery"],
+      "specs": {
+        "sensor": "Logitech HERO 2",
+        "dpi": "32,000",
+        "weight": "60g",
+        "switches": "LIGHTFORCE Hybrid",
+        "battery": "95 hours",
+        "polling": "8000Hz"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Pulsar X2 Mini",
+      "brand": "Pulsar",
+      "price": 99.99,
+      "discountPrice": 89.99,
+      "rating": 4.7,
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+      ],
+      "category": "mouse",
+      "description": "Ultra-lightweight symmetrical FPS mouse at only 52g with PAW3395 sensor for competitive gaming dominance.",
+      "features": ["PAW3395 Sensor", "52g Ultra-Light", "Kailh GM Switches", "Wireless 2.4GHz", "70-hour Battery"],
+      "specs": {
+        "sensor": "PixArt PAW3395",
+        "dpi": "26,000",
+        "weight": "52g",
+        "switches": "Kailh GM 8.0",
+        "battery": "70 hours",
+        "polling": "8000Hz"
+      }
+    },
+    {
+      "id": 9,
+      "title": "DARK CORE RGB Pro",
+      "brand": "Corsair",
+      "price": 89.99,
+      "discountPrice": 69.99,
+      "rating": 4.5,
+      "stock": 45,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+      ],
+      "category": "mouse",
+      "badge": "New",
+      "description": "Ergonomic wireless gaming mouse with Qi wireless charging and interchangeable grip tape for personalized control.",
+      "features": ["18K DPI Sensor", "Qi Wireless Charging", "Interchangeable Grips", "50-hour Battery", "Ergonomic Design"],
+      "specs": {
+        "sensor": "Corsair MarksmAN 18K",
+        "dpi": "18,000",
+        "weight": "89g",
+        "switches": "Omron",
+        "battery": "50 hours",
+        "charging": "Qi Wireless"
+      }
+    },
+    {
+      "id": 10,
+      "title": "EC3-C Ergo Pro",
+      "brand": "BenQ",
+      "price": 79.99,
+      "discountPrice": 69.99,
+      "rating": 4.6,
+      "stock": 33,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+      ],
+      "category": "mouse",
+      "description": "Premium ergonomic mouse designed for extended gaming sessions with customizable weight system and precision sensor.",
+      "features": ["3200 DPI Sensor", "Customizable Weight", "Ergonomic Right-Handed", "Wired Connection", "PixArt Sensor"],
+      "specs": {
+        "sensor": "PixArt 3200 DPI",
+        "dpi": "3200",
+        "connection": "Wired USB",
+        "weight": "Customizable",
+        "grip": "Right-handed Ergonomic",
+        "polling": "1000Hz"
+      }
+    }
+  ],
+  "headsets": [
+    {
+      "id": 11,
+      "title": "Kraken V3 Pro",
+      "brand": "Razer",
+      "price": 199.99,
+      "discountPrice": 169.99,
+      "rating": 4.7,
+      "stock": 45,
+      "images": [
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
+        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600"
+      ],
+      "category": "headsets",
+      "badge": "Pro",
+      "description": "Feel every explosion with haptic technology and THX Spatial Audio. 50mm TriForce drivers for immersive gaming.",
+      "features": ["50mm TriForce Drivers", "Haptic Feedback", "THX Spatial Audio", "Detachable Mic", "44-hour Battery"],
+      "specs": {
+        "drivers": "50mm TriForce Titanium",
+        "connectivity": "Wireless 2.4GHz + BT",
+        "battery": "44 hours",
+        "microphone": "Detachable HyperClear",
+        "features": "Haptic, THX Spatial Audio",
+        "frequency": "20Hz-20kHz"
+      }
+    },
+    {
+      "id": 12,
+      "title": "VOID RGB Elite",
+      "brand": "Corsair",
+      "price": 99.99,
+      "discountPrice": 79.99,
+      "rating": 4.5,
+      "stock": 67,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600",
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+      ],
+      "category": "headsets",
+      "badge": "Best Seller",
+      "description": "Premium wireless gaming audio with custom neodymium drivers and 7.1 surround sound for marathon sessions.",
+      "features": ["50mm Custom Drivers", "7.1 Surround Sound", "RGB Lighting", "Omnidirectional Mic", "16-hour Battery"],
+      "specs": {
+        "drivers": "50mm Custom Neodymium",
+        "connectivity": "Wireless 2.4GHz",
+        "battery": "16 hours",
+        "microphone": "Omnidirectional",
+        "surround": "7.1 Virtual",
+        "frequency": "20Hz-20kHz"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Cloud III Wireless",
+      "brand": "HyperX",
+      "price": 149.99,
+      "discountPrice": 129.99,
+      "rating": 4.8,
+      "stock": 33,
+      "images": [
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600"
+      ],
+      "category": "headsets",
+      "description": "Legendary HyperX comfort meets incredible 120-hour battery life with DTS:X spatial audio processing.",
+      "features": ["53mm Drivers", "DTS Headphone:X", "120-hour Battery", "Memory Foam Ear Cups", "Noise-Cancelling Mic"],
+      "specs": {
+        "drivers": "53mm with DTS:X",
+        "connectivity": "Wireless 2.4GHz",
+        "battery": "120 hours",
+        "microphone": "Detachable Noise-Cancelling",
+        "comfort": "Memory Foam",
+        "frequency": "10Hz-28kHz"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Arctis Nova Pro",
+      "brand": "SteelSeries",
+      "price": 349.99,
+      "discountPrice": 299.99,
+      "rating": 4.9,
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600",
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+      ],
+      "category": "headsets",
+      "badge": "Pro",
+      "description": "Pinnacle of gaming audio with dedicated DAC, hot-swap battery system, and active noise cancellation.",
+      "features": ["Premium Hi-Fi Drivers", "Multi-System", "Infinite Battery (Hot-Swap)", "Active Noise Cancel", "Dedicated DAC"],
+      "specs": {
+        "drivers": "Premium Hi-Fi",
+        "connectivity": "Wireless Multi-System",
+        "battery": "Infinite (Hot-Swap)",
+        "microphone": "ClearCast Gen 2",
+        "dac": "Dedicated Audio Processor",
+        "anc": "Active Noise Cancellation"
+      }
+    },
+    {
+      "id": 15,
+      "title": "ROG Strix 2",
+      "brand": "ASUS",
+      "price": 129.99,
+      "discountPrice": 109.99,
+      "rating": 4.6,
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
+        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600"
+      ],
+      "category": "headsets",
+      "badge": "New",
+      "description": "ASUS gaming headset with robust audio drivers and AI noise-cancelling microphone for competitive advantage.",
+      "features": ["Dual AI Mics", "ROG Audio Profile", "Lightweight Design", "Wireless 2.4GHz", "30-hour Battery"],
+      "specs": {
+        "drivers": "50mm ASUS-tuned",
+        "connectivity": "Wireless 2.4GHz",
+        "battery": "30 hours",
+        "microphone": "Dual AI Noise-Cancelling",
+        "weight": "Lightweight",
+        "frequency": "20Hz-20kHz"
+      }
+    }
+  ],
+  "monitors": [
+    {
+      "id": 16,
+      "title": "ASUS ROG Swift Pro OLED",
+      "brand": "ASUS",
+      "price": 799.99,
+      "discountPrice": 699.99,
+      "rating": 4.9,
+      "stock": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
+        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+      ],
+      "category": "monitors",
+      "badge": "Pro",
+      "description": "27-inch 1440p OLED gaming monitor with 360Hz refresh rate and 0.03ms response time for ultimate esports domination.",
+      "features": ["27\" 1440p OLED", "360Hz Refresh", "0.03ms Response", "USB-C 90W", "Extreme Black Ink"],
+      "specs": {
+        "size": "27 inches",
+        "resolution": "2560 x 1440 (1440p)",
+        "panel": "OLED",
+        "refresh": "360Hz",
+        "response": "0.03ms GTG",
+        "color": "DCI-P3 98.5%"
+      }
+    },
+    {
+      "id": 17,
+      "title": "LG 27GP850",
+      "brand": "LG",
+      "price": 399.99,
+      "discountPrice": 349.99,
+      "rating": 4.7,
+      "stock": 22,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
+        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+      ],
+      "category": "monitors",
+      "badge": "Best Seller",
+      "description": "27-inch 1440p IPS gaming monitor with 165Hz refresh rate and exceptional color accuracy for competitive gaming.",
+      "features": ["27\" 1440p IPS", "165Hz Refresh", "1ms Response", "HDR Support", "USB-C 65W"],
+      "specs": {
+        "size": "27 inches",
+        "resolution": "2560 x 1440 (1440p)",
+        "panel": "IPS",
+        "refresh": "165Hz",
+        "response": "1ms GTG",
+        "color": "98.5% DCI-P3"
+      }
+    },
+    {
+      "id": 18,
+      "title": "BenQ EW2780U",
+      "brand": "BenQ",
+      "price": 599.99,
+      "discountPrice": 529.99,
+      "rating": 4.6,
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
+        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+      ],
+      "category": "monitors",
+      "description": "27-inch 4K professional gaming monitor with eye-care technology and factory calibrated color for creative professionals.",
+      "features": ["27\" 4K UHD", "60Hz Refresh", "Eye-Care Tech", "Calibrated Colors", "Thunderbolt 3"],
+      "specs": {
+        "size": "27 inches",
+        "resolution": "3840 x 2160 (4K)",
+        "panel": "VA",
+        "refresh": "60Hz",
+        "response": "1ms",
+        "color": "100% Adobe RGB"
+      }
+    },
+    {
+      "id": 19,
+      "title": "MSI Oculux GN30SQPX",
+      "brand": "MSI",
+      "price": 449.99,
+      "discountPrice": 399.99,
+      "rating": 4.8,
+      "stock": 18,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
+        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+      ],
+      "category": "monitors",
+      "badge": "New",
+      "description": "24-inch 1080p 360Hz esports monitor with exceptional speed and clarity for professional competitive gaming.",
+      "features": ["24\" 1080p TN", "360Hz Refresh", "0.5ms Response", "240Hz+ Capable", "G-Sync Compatible"],
+      "specs": {
+        "size": "24 inches",
+        "resolution": "1920 x 1080 (1080p)",
+        "panel": "TN",
+        "refresh": "360Hz",
+        "response": "0.5ms",
+        "synch": "NVIDIA G-Sync"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Dell S2721DGF",
+      "brand": "Dell",
+      "price": 349.99,
+      "discountPrice": 299.99,
+      "rating": 4.5,
+      "stock": 31,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
+        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+      ],
+      "category": "monitors",
+      "description": "27-inch 1440p IPS gaming monitor at 165Hz with excellent color reproduction and reliable gaming performance.",
+      "features": ["27\" 1440p IPS", "165Hz Refresh", "1ms Response", "DisplayPort 1.4", "USB-C Hub"],
+      "specs": {
+        "size": "27 inches",
+        "resolution": "2560 x 1440 (1440p)",
+        "panel": "IPS",
+        "refresh": "165Hz",
+        "response": "1ms",
+        "color": "95% DCI-P3"
+      }
+    }
+  ],
+  "mousepads": [
+    {
+      "id": 21,
+      "title": "SteelSeries QcK Prism Xl",
+      "brand": "SteelSeries",
+      "price": 99.99,
+      "discountPrice": 79.99,
+      "rating": 4.6,
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
+        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+      ],
+      "category": "mousepads",
+      "badge": "Best Seller",
+      "description": "Large premium mousepad with cloth surface and integrated RGB lighting for extended gaming surfaces.",
+      "features": ["XXL Size (900x400mm)", "Prism Lighting", "Cloth Surface", "Non-slip Base", "Embroidered Edges"],
+      "specs": {
+        "size": "900 x 400 x 4mm",
+        "material": "Micro-woven Cloth",
+        "surface": "QcK+ Rubber Compound",
+        "base": "Non-slip Rubber",
+        "lighting": "Prism RGB",
+        "weight": "615g"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Corsair MM800 RGB",
+      "brand": "Corsair",
+      "price": 79.99,
+      "discountPrice": 69.99,
+      "rating": 4.5,
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
+        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+      ],
+      "category": "mousepads",
+      "description": "Extended RGB mouse pad with dynamic iCUE lighting and optimized surface for gaming mice.",
+      "features": ["Extended Size (930x400mm)", "iCUE Lighting", "Optimized Surface", "Rubberized Base", "Anti-Fray Stitching"],
+      "specs": {
+        "size": "930 x 400 x 5mm",
+        "material": "Cloth",
+        "surface": "Optimized Gaming Surface",
+        "base": "Rubberized",
+        "lighting": "iCUE RGB",
+        "weight": "650g"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Razer Goliathus Chroma",
+      "brand": "Razer",
+      "price": 89.99,
+      "discountPrice": 74.99,
+      "rating": 4.7,
+      "stock": 43,
+      "images": [
+        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
+        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+      ],
+      "category": "mousepads",
+      "badge": "Pro",
+      "description": "Large gaming mousepad with Chroma RGB lighting and optimized micro-textured surface for precision control.",
+      "features": ["XL Size (920x410mm)", "Chroma RGB", "Micro-textured Surface", "Non-slip Grip", "Soft Cloth"],
+      "specs": {
+        "size": "920 x 410 x 3mm",
+        "material": "Cloth",
+        "surface": "Micro-textured",
+        "base": "Non-slip Rubber",
+        "lighting": "Razer Chroma",
+        "weight": "459g"
+      }
+    },
+    {
+      "id": 24,
+      "title": "HyperX Fury S XL",
+      "brand": "HyperX",
+      "price": 69.99,
+      "discountPrice": 59.99,
+      "rating": 4.4,
+      "stock": 72,
+      "images": [
+        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
+        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+      ],
+      "category": "mousepads",
+      "badge": "New",
+      "description": "Durable extra-large mousepad with woven fabric and non-slip rubber base for consistent gaming performance.",
+      "features": ["XL Size (900x420mm)", "Woven Fabric", "Non-slip Base", "Stitched Edges", "Durable Construction"],
+      "specs": {
+        "size": "900 x 420 x 3mm",
+        "material": "Woven Fabric",
+        "surface": "Specialized Gaming Weave",
+        "base": "Non-slip Rubber",
+        "lighting": "None",
+        "weight": "550g"
+      }
+    },
+    {
+      "id": 25,
+      "title": "ASUS ROG Scabbard Extended",
+      "brand": "ASUS",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "rating": 4.5,
+      "stock": 56,
+      "images": [
+        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
+        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+      ],
+      "category": "mousepads",
+      "description": "Durable extended mousepad with reinforced stitching and optimized cloth surface for gaming and productivity.",
+      "features": ["900x400mm Size", "Cloth Surface", "Reinforced Stitching", "Non-slip Base", "Compact Weight"],
+      "specs": {
+        "size": "900 x 400 x 2mm",
+        "material": "Cloth",
+        "surface": "Smooth Gaming Cloth",
+        "base": "Rubber Non-slip",
+        "lighting": "None",
+        "weight": "200g"
+      }
+    }
+  ],
+  "gamingchairs": [
+    {
+      "id": 26,
+      "title": "Secretlab Titan Evo",
+      "brand": "Secretlab",
+      "price": 449.99,
+      "discountPrice": 399.99,
+      "rating": 4.9,
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
+        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+      ],
+      "category": "gamingchairs",
+      "badge": "Pro",
+      "description": "Premium ergonomic gaming chair with lumbar support and 4D armrests for extended comfortable gaming sessions.",
+      "features": ["Lumbar Support", "4D Armrests", "Titanium Base", "Rocking Function", "12-Year Warranty"],
+      "specs": {
+        "dimensions": "650 x 720 x 1200-1310mm",
+        "material": "High-Grade Nappa Leather",
+        "weight_capacity": "220kg",
+        "base": "Titanium",
+        "tilt_angle": "165 degrees",
+        "warranty": "12 years"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Herman Miller Gaming Chair",
+      "brand": "Herman Miller",
+      "price": 599.99,
+      "discountPrice": 549.99,
+      "rating": 4.8,
+      "stock": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
+        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+      ],
+      "category": "gamingchairs",
+      "badge": "Pro",
+      "description": "Luxury ergonomic gaming chair from Herman Miller with advanced support and premium material construction.",
+      "features": ["Advanced Ergonomics", "Premium Upholstery", "Adjustable Lumbar", "Fully Articulated", "Lifetime Warranty"],
+      "specs": {
+        "dimensions": "680 x 720 x 1040-1130mm",
+        "material": "Premium Leather",
+        "weight_capacity": "300kg",
+        "base": "Nylon",
+        "tilt_angle": "170 degrees",
+        "warranty": "Lifetime"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Autonomous Ergo Chair Pro",
+      "brand": "Autonomous",
+      "price": 299.99,
+      "discountPrice": 259.99,
+      "rating": 4.6,
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
+        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+      ],
+      "category": "gamingchairs",
+      "badge": "Best Seller",
+      "description": "Mid-range ergonomic gaming chair with adjustable features and breathable mesh back for comfortable long sessions.",
+      "features": ["Breathable Mesh Back", "Adjustable Lumbar", "3D Armrests", "Tilt Lock", "10-Year Warranty"],
+      "specs": {
+        "dimensions": "620 x 680 x 990-1120mm",
+        "material": "Mesh",
+        "weight_capacity": "150kg",
+        "base": "Nylon",
+        "tilt_angle": "160 degrees",
+        "warranty": "10 years"
+      }
+    },
+    {
+      "id": 29,
+      "title": "GTOWER Apex Racing",
+      "brand": "GTOWER",
+      "price": 199.99,
+      "discountPrice": 169.99,
+      "rating": 4.4,
+      "stock": 42,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
+        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+      ],
+      "category": "gamingchairs",
+      "badge": "New",
+      "description": "Budget-friendly gaming chair with racing design and basic ergonomic features for casual gaming.",
+      "features": ["Racing Design", "Adjustable Height", "Padded Armrests", "Tilt Function", "5-Year Warranty"],
+      "specs": {
+        "dimensions": "600 x 700 x 900-1000mm",
+        "material": "PU Leather",
+        "weight_capacity": "120kg",
+        "base": "Plastic",
+        "tilt_angle": "150 degrees",
+        "warranty": "5 years"
+      }
+    },
+    {
+      "id": 30,
+      "title": "DXRacer King Series",
+      "brand": "DXRacer",
+      "price": 349.99,
+      "discountPrice": 299.99,
+      "rating": 4.5,
+      "stock": 19,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
+        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+      ],
+      "category": "gamingchairs",
+      "description": "Premium gaming chair with high-density foam and reclinable design for maximum comfort during extended sessions.",
+      "features": ["High-Density Foam", "Reclining Backrest", "Padded Armrests", "Lumbar Pillow", "7-Year Warranty"],
+      "specs": {
+        "dimensions": "650 x 700 x 1050-1180mm",
+        "material": "Premium PU Leather",
+        "weight_capacity": "160kg",
+        "base": "Metal",
+        "tilt_angle": "165 degrees",
+        "warranty": "7 years"
+      }
+    }
+  ],
+  "controllers": [
+    {
+      "id": 31,
+      "title": "Xbox Elite Series 2",
+      "brand": "Microsoft",
+      "price": 179.99,
+      "discountPrice": 149.99,
+      "rating": 4.7,
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
+        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+      ],
+      "category": "controllers",
+      "badge": "Pro",
+      "description": "Premium Xbox controller with customizable stick tension, hair-trigger mode, and swappable components.",
+      "features": ["Custom Stick Tension", "Hair-Trigger Locks", "Swappable Sticks", "Textured Grip", "Wireless 2.4GHz"],
+      "specs": {
+        "compatibility": "Xbox Series X/S/One",
+        "connectivity": "Wireless 2.4GHz + Bluetooth",
+        "battery": "40 hours",
+        "customization": "Swappable Parts",
+        "texture": "Textured Grip",
+        "weight": "345g"
+      }
+    },
+    {
+      "id": 32,
+      "title": "DualSense Edge",
+      "brand": "Sony",
+      "price": 199.99,
+      "discountPrice": 179.99,
+      "rating": 4.8,
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
+        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+      ],
+      "category": "controllers",
+      "badge": "Pro",
+      "description": "Premium PlayStation controller with back buttons, customizable sticks, and advanced haptic feedback.",
+      "features": ["Back Buttons", "Swappable Stick Modules", "Haptic Feedback", "Adaptive Triggers", "Wired/Wireless"],
+      "specs": {
+        "compatibility": "PlayStation 5",
+        "connectivity": "Wireless + USB-C Wired",
+        "battery": "8 hours wireless",
+        "customization": "Full Module Swap",
+        "haptic": "Advanced Haptic Motors",
+        "weight": "210g"
+      }
+    },
+    {
+      "id": 33,
+      "title": "8BitDo Ultimate",
+      "brand": "8BitDo",
+      "price": 89.99,
+      "discountPrice": 74.99,
+      "rating": 4.6,
+      "stock": 47,
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
+        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+      ],
+      "category": "controllers",
+      "badge": "Best Seller",
+      "description": "Universal wireless controller compatible with multiple platforms including PC, Switch, and Android.",
+      "features": ["Multi-Platform", "Hall Effect Sticks", "Customizable Buttons", "Rechargeable Battery", "USB-C"],
+      "specs": {
+        "compatibility": "PC, Switch, Android, iOS",
+        "connectivity": "Wireless 2.4GHz + Bluetooth",
+        "battery": "20 hours",
+        "sticks": "Hall Effect Technology",
+        "customization": "Button Remapping",
+        "weight": "168g"
+      }
+    },
+    {
+      "id": 34,
+      "title": "GameCube Ultimate Wireless",
+      "brand": "PowerA",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "rating": 4.4,
+      "stock": 31,
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
+        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+      ],
+      "category": "controllers",
+      "badge": "New",
+      "description": "Retro GameCube-style controller with modern wireless connectivity and improved ergonomics.",
+      "features": ["GameCube Design", "Wireless 2.4GHz", "Rumble Support", "Button Mapping", "Lightweight"],
+      "specs": {
+        "compatibility": "Switch, PC",
+        "connectivity": "Wireless 2.4GHz",
+        "battery": "30 hours",
+        "design": "GameCube Classic",
+        "features": "Rumble Feedback",
+        "weight": "190g"
+      }
+    },
+    {
+      "id": 35,
+      "title": "Razer Wolverine V3 Pro",
+      "brand": "Razer",
+      "price": 169.99,
+      "discountPrice": 149.99,
+      "rating": 4.5,
+      "stock": 20,
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
+        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+      ],
+      "category": "controllers",
+      "description": "Premium Xbox-compatible controller with enhanced triggers and customizable button mapping.",
+      "features": ["Enhanced Triggers", "Mecha Switches", "Button Mapping", "Cable Storage", "Xbox Compatible"],
+      "specs": {
+        "compatibility": "Xbox Series X/S/One, PC",
+        "connectivity": "Wired USB-C",
+        "customization": "Button Remapping",
+        "switches": "Mecha Switches",
+        "design": "Premium Build",
+        "weight": "280g"
+      }
+    }
+  ],
+  "webcams": [
+    {
+      "id": 36,
+      "title": "Logitech BRIO 4K",
+      "brand": "Logitech",
+      "price": 199.99,
+      "discountPrice": 169.99,
+      "rating": 4.7,
+      "stock": 19,
+      "images": [
+        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
+        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+      ],
+      "category": "webcams",
+      "badge": "Pro",
+      "description": "Premium 4K webcam with RightLight technology and auto-focus for crystal-clear streaming and conferencing.",
+      "features": ["4K UHD 30fps", "RightLight Technology", "Auto-Focus", "Field of View 90°", "USB Plug-n-Play"],
+      "specs": {
+        "resolution": "4K (3840x2160) @30fps",
+        "sensor": "8MP",
+        "fields_of_view": "90°, 78°, 65°",
+        "low_light": "RightLight 3 with HDR",
+        "lens": "Auto-Focus",
+        "connection": "USB 3.0"
+      }
+    },
+    {
+      "id": 37,
+      "title": "Razer Kiyo Pro",
+      "brand": "Razer",
+      "price": 299.99,
+      "discountPrice": 249.99,
+      "rating": 4.8,
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
+        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+      ],
+      "category": "webcams",
+      "badge": "Best Seller",
+      "description": "Streaming-focused 1080p webcam with built-in fill light and sensor for automatic brightness adjustment.",
+      "features": ["1080p 60fps", "Built-in Ring Light", "Sony Sensor", "Wide FOV 80°", "USB Plug-n-Play"],
+      "specs": {
+        "resolution": "1080p (1920x1080) @60fps",
+        "sensor": "Sony Starvis",
+        "fields_of_view": "80°",
+        "lighting": "Built-in Ring Light",
+        "auto_adjustment": "Light Sensor",
+        "connection": "USB 3.0"
+      }
+    },
+    {
+      "id": 38,
+      "title": "Corsair Elgato Facecam Pro",
+      "brand": "Corsair",
+      "price": 299.99,
+      "discountPrice": 259.99,
+      "rating": 4.6,
+      "stock": 18,
+      "images": [
+        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
+        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+      ],
+      "category": "webcams",
+      "description": "Professional 1080p streaming camera with Sony sensor and superior image quality for content creators.",
+      "features": ["1080p 60fps", "Sony 1/2\" Sensor", "Advanced Optics", "Mounting Flexibility", "iCUE Integration"],
+      "specs": {
+        "resolution": "1080p (1920x1080) @60fps",
+        "sensor": "Sony 1/2 Inch",
+        "fields_of_view": "81°",
+        "focus": "Fixed Focus",
+        "connectivity": "USB-C",
+        "features": "iCUE Compatible"
+      }
+    },
+    {
+      "id": 39,
+      "title": "HyperX Vision S",
+      "brand": "HyperX",
+      "price": 159.99,
+      "discountPrice": 139.99,
+      "rating": 4.5,
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
+        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+      ],
+      "category": "webcams",
+      "badge": "New",
+      "description": "1080p gaming webcam with low-light correction and stream-friendly features for casual content creators.",
+      "features": ["1080p 60fps", "Low-light Correction", "Auto-Focus", "78° FOV", "USB Plug-n-Play"],
+      "specs": {
+        "resolution": "1080p (1920x1080) @60fps",
+        "sensor": "Standard CMOS",
+        "fields_of_view": "78°",
+        "low_light": "Night Light Correction",
+        "focus": "Auto-Focus",
+        "connection": "USB 2.0"
+      }
+    },
+    {
+      "id": 40,
+      "title": "ASUS ROG Eve Start",
+      "brand": "ASUS",
+      "price": 179.99,
+      "discountPrice": 149.99,
+      "rating": 4.4,
+      "stock": 22,
+      "images": [
+        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
+        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+      ],
+      "category": "webcams",
+      "description": "Gaming-oriented 1080p webcam with built-in microphone and adjustable stand for flexible setup.",
+      "features": ["1080p 30fps", "Built-in Microphone", "Adjustable Stand", "Noise Cancel Mic", "USB Plug-n-Play"],
+      "specs": {
+        "resolution": "1080p (1920x1080) @30fps",
+        "sensor": "Standard CMOS",
+        "microphone": "Built-in with Noise Cancel",
+        "fields_of_view": "90°",
+        "focus": "Fixed Focus",
+        "connection": "USB 2.0"
+      }
+    }
+  ],
+  "microphones": [
+    {
+      "id": 41,
+      "title": "Audio-Technica AT4040",
+      "brand": "Audio-Technica",
+      "price": 249.99,
+      "discountPrice": 219.99,
+      "rating": 4.8,
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
+        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+      ],
+      "category": "microphones",
+      "badge": "Pro",
+      "description": "Professional large-diaphragm condenser microphone ideal for streaming and podcasting with cardioid pattern.",
+      "features": ["Large-Diaphragm Condenser", "Cardioid Pattern", "Side-Address Design", "48V Phantom Power", "XLR Connection"],
+      "specs": {
+        "microphone_type": "Condenser",
+        "diaphragm": "Large (0.87 inch)",
+        "pattern": "Cardioid",
+        "frequency": "20Hz-20kHz",
+        "sensitivity": "-35dBV/Pa",
+        "connection": "XLR"
+      }
+    },
+    {
+      "id": 42,
+      "title": "Shure SM7B",
+      "brand": "Shure",
+      "price": 399.99,
+      "discountPrice": 349.99,
+      "rating": 4.9,
+      "stock": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
+        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+      ],
+      "category": "microphones",
+      "badge": "Pro",
+      "description": "Industry-standard dynamic microphone trusted by professionals for streaming and recording with exceptional rejection.",
+      "features": ["Dynamic Microphone", "Cardioid Pattern", "Built-in Shock Mount", "Presence Peak", "XLR Connection"],
+      "specs": {
+        "microphone_type": "Dynamic",
+        "diaphragm": "Large 0.81 inch",
+        "pattern": "Cardioid",
+        "frequency": "50Hz-16kHz",
+        "sensitivity": "-37dBV/Pa",
+        "connection": "XLR"
+      }
+    },
+    {
+      "id": 43,
+      "title": "Blue Yeti X",
+      "brand": "Blue Microphones",
+      "price": 129.99,
+      "discountPrice": 99.99,
+      "rating": 4.6,
+      "stock": 35,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
+        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+      ],
+      "category": "microphones",
+      "badge": "Best Seller",
+      "description": "USB-powered streaming microphone with 4 polar patterns and built-in headphone output for monitoring.",
+      "features": ["4 Polar Patterns", "Blue VO!CE Tech", "Headphone Output", "USB Plug-n-Play", "Touch Controls"],
+      "specs": {
+        "microphone_type": "Condenser",
+        "patterns": "4 (Cardioid, Omnidirectional, Bidirectional, Stereo)",
+        "frequency": "20Hz-20kHz",
+        "sensitivity": "-36dBV/Pa",
+        "connection": "USB",
+        "power": "USB Powered"
+      }
+    },
+    {
+      "id": 44,
+      "title": "HyperX QuadCast S",
+      "brand": "HyperX",
+      "price": 139.99,
+      "discountPrice": 119.99,
+      "rating": 4.5,
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
+        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+      ],
+      "category": "microphones",
+      "badge": "New",
+      "description": "Gaming-focused USB microphone with tap-to-mute and integrated stand for streaming and podcasting.",
+      "features": ["4 Polar Patterns", "Tap-to-Mute", "Integrated Stand", "Anti-Vibration Mount", "USB-C Connection"],
+      "specs": {
+        "microphone_type": "Condenser",
+        "patterns": "4 (Cardioid, Omnidirectional, Bidirectional, Stereo)",
+        "frequency": "20Hz-20kHz",
+        "sensitivity": "-35dBV/Pa",
+        "connection": "USB-C",
+        "power": "USB Powered"
+      }
+    },
+    {
+      "id": 45,
+      "title": "Rode Wireless GO II",
+      "brand": "Rode",
+      "price": 299.99,
+      "discountPrice": 259.99,
+      "rating": 4.7,
+      "stock": 16,
+      "images": [
+        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
+        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+      ],
+      "category": "microphones",
+      "description": "Compact wireless lavalier microphone system with solid-state recording for on-the-go content creators.",
+      "features": ["Wireless 2.4GHz", "Solid-State Recording", "Built-in Lapel Mic", "Plug-in Transmitter", "5-hour Battery"],
+      "specs": {
+        "system_type": "Wireless Lavalier",
+        "connectivity": "2.4GHz Digital",
+        "frequency": "20Hz-20kHz",
+        "battery": "5 hours",
+        "recording": "Internal SD Card",
+        "range": "200 meters"
+      }
+    }
+  ],
+  "graphicscards": [
+    {
+      "id": 46,
+      "title": "NVIDIA RTX 5090",
+      "brand": "NVIDIA",
+      "price": 1999.99,
+      "discountPrice": 1899.99,
+      "rating": 4.8,
+      "stock": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+      ],
+      "category": "graphicscards",
+      "badge": "Pro",
+      "description": "Flagship GPU with unprecedented CUDA cores and memory bandwidth for 4K/8K gaming and AI computation.",
+      "features": ["16384 CUDA Cores", "32GB GDDR7 Memory", "PCIe 5.0", "Ray Tracing Cores", "Tensor Cores"],
+      "specs": {
+        "memory": "32GB GDDR7",
+        "memory_bandwidth": "1792 GB/s",
+        "cuda_cores": "16384",
+        "boost_clock": "2850 MHz",
+        "power": "575W TDP",
+        "connection": "PCIe 5.0 x16"
+      }
+    },
+    {
+      "id": 47,
+      "title": "ASUS ROG RTX 5080",
+      "brand": "ASUS",
+      "price": 999.99,
+      "discountPrice": 899.99,
+      "rating": 4.7,
+      "stock": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+      ],
+      "category": "graphicscards",
+      "badge": "Best Seller",
+      "description": "High-end ASUS-customized RTX 5080 with premium cooling and RGB lighting for extreme 4K gaming.",
+      "features": ["10240 CUDA Cores", "16GB GDDR7", "Triple Cooling", "RGB Lighting", "OC Ready"],
+      "specs": {
+        "memory": "16GB GDDR7",
+        "memory_bandwidth": "864 GB/s",
+        "cuda_cores": "10240",
+        "boost_clock": "2820 MHz",
+        "power": "320W TDP",
+        "connection": "PCIe 5.0 x16"
+      }
+    },
+    {
+      "id": 48,
+      "title": "Corsair RTX 5070 Ti",
+      "brand": "Corsair",
+      "price": 749.99,
+      "discountPrice": 699.99,
+      "rating": 4.6,
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+      ],
+      "category": "graphicscards",
+      "description": "Balanced mid-to-high-end GPU perfect for 1440p/4K gaming with excellent power efficiency.",
+      "features": ["6144 CUDA Cores", "12GB GDDR7", "Dual Fan Cooling", "Liquid Cooled Options", "3-Year Warranty"],
+      "specs": {
+        "memory": "12GB GDDR7",
+        "memory_bandwidth": "576 GB/s",
+        "cuda_cores": "6144",
+        "boost_clock": "2760 MHz",
+        "power": "280W TDP",
+        "connection": "PCIe 5.0 x16"
+      }
+    },
+    {
+      "id": 49,
+      "title": "Gigabyte RTX 5070",
+      "brand": "Gigabyte",
+      "price": 549.99,
+      "discountPrice": 499.99,
+      "rating": 4.5,
+      "stock": 22,
+      "images": [
+        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+      ],
+      "category": "graphicscards",
+      "badge": "New",
+      "description": "Excellent 1440p gaming GPU with strong 1080p esports performance and great value proposition.",
+      "features": ["5888 CUDA Cores", "12GB GDDR7", "Windforce Cooling", "RGB Lighting", "Compact Design"],
+      "specs": {
+        "memory": "12GB GDDR7",
+        "memory_bandwidth": "576 GB/s",
+        "cuda_cores": "5888",
+        "boost_clock": "2700 MHz",
+        "power": "250W TDP",
+        "connection": "PCIe 5.0 x16"
+      }
+    },
+    {
+      "id": 50,
+      "title": "MSI RTX 5060 Ti Gaming",
+      "brand": "MSI",
+      "price": 349.99,
+      "discountPrice": 299.99,
+      "rating": 4.4,
+      "stock": 31,
+      "images": [
+        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+      ],
+      "category": "graphicscards",
+      "description": "Entry-level enthusiast GPU perfect for 1080p high-end gaming and content creation at budget-friendly price.",
+      "features": ["3840 CUDA Cores", "8GB GDDR6", "Twin Frozr Cooling", "Compact Size", "Budget-Friendly"],
+      "specs": {
+        "memory": "8GB GDDR6",
+        "memory_bandwidth": "288 GB/s",
+        "cuda_cores": "3840",
+        "boost_clock": "2595 MHz",
+        "power": "170W TDP",
+        "connection": "PCIe 4.0 x16"
+      }
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "RTX 5090: Redefining Gaming Performance",
+      "excerpt": "NVIDIA's latest flagship GPU sets new standards with unprecedented CUDA core count and memory bandwidth.",
+      "category": "Hardware",
+      "author": "Alex Chen",
+      "date": "2026-02-10",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600",
+      "readTime": "8 min"
+    },
+    {
+      "id": 2,
+      "title": "2026 Esports World Championship Highlights",
+      "excerpt": "Witness the most epic competitive gaming moments as teams battle for the $5M prize pool.",
+      "category": "Esports",
+      "author": "Sarah Kim",
+      "date": "2026-02-08",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600",
+      "readTime": "12 min"
+    },
+    {
+      "id": 3,
+      "title": "Building the $10K Ultra Gaming Setup",
+      "excerpt": "A comprehensive guide to assembling the ultimate gaming battlestation with zero compromises.",
+      "category": "Guides",
+      "author": "Mike Torres",
+      "date": "2026-02-05",
+      "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600",
+      "readTime": "15 min"
+    },
+    {
+      "id": 4,
+      "title": "Cloud Gaming 2026: Local Hardware Obsolete?",
+      "excerpt": "As cloud gaming technology matures, we examine whether dedicated hardware still has a future.",
+      "category": "Industry",
+      "author": "Dana Williams",
+      "date": "2026-02-01",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600",
+      "readTime": "10 min"
+    },
+    {
+      "id": 5,
+      "title": "Mechanical vs Optical Switches Deep Dive",
+      "excerpt": "The definitive guide to keyboard switch technology and finding your perfect typing/gaming experience.",
+      "category": "Hardware",
+      "author": "Jordan Lee",
+      "date": "2026-01-28",
+      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600",
+      "readTime": "7 min"
+    }
+  ],
+  "tournaments": [
+    {
+      "id": 1,
+      "title": "NEXUS Championship Series 2026",
+      "game": "Valorant",
+      "prizePool": "$500,000",
+      "date": "March 15-20, 2026",
+      "status": "Upcoming",
+      "teams": 16,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600"
+    },
+    {
+      "id": 2,
+      "title": "Global Apex Legends Tournament",
+      "game": "Apex Legends",
+      "prizePool": "$2,000,000",
+      "date": "April 1-7, 2026",
+      "status": "Registration Open",
+      "teams": 40,
+      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600"
+    },
+    {
+      "id": 3,
+      "title": "Counter-Strike 2 Major Finals",
+      "game": "Counter-Strike 2",
+      "prizePool": "$1,250,000",
+      "date": "May 10-18, 2026",
+      "status": "Announced",
+      "teams": 24,
+      "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=600"
+    }
+  ]
+}
