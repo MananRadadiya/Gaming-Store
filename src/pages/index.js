@@ -6,3 +6,4 @@ export { default as WishlistPage } from './WishlistPage';
 export { default as CheckoutPage } from './CheckoutPage';
 export { default as BlogPage } from './BlogPage';
 export { default as EsportsPage } from './EsportsPage';
+export { default as FlashSalePage } from './FlashSalePage';

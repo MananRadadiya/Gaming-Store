@@ -11,7 +11,12 @@ export { default as StatsSection } from './StatsSection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as CategoriesSection } from './CategoriesSection';
 export { default as FlashSaleSection } from './FlashSaleSection';
+export { default as FeaturedShowcase } from './FeaturedShowcase';
+export { default as VisualHighlight } from './VisualHighlight';
+export { default as BuiltForChampions } from './BuiltForChampions';
+export { default as Newsletter } from './Newsletter';
 export { default as Category3D } from './Three/Category3D';
+export { default as FilterSidebar } from './FilterSidebar';
 
 
 

@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart, updateQuantity } from '../store/cartSlice';
 import { addToWishlist, removeFromWishlist } from '../store/wishlistSlice';
+import { logout } from '../store/authSlice';
 
 export const useCart = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,17 @@ export const useWishlist = () => {
     removeFromWishlist: (id) => dispatch(removeFromWishlist(id)),
     isInWishlist: (id) => items.some(item => item.id === id),
     count: items.length,
+  };
+};
+
+export const useAuth = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
+
+  return {
+    ...auth,
+    logout: () => dispatch(logout()),
+    isAdmin: auth.user?.role === 'admin',
   };
 };
 
