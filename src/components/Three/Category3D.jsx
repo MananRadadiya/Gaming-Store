@@ -5,8 +5,16 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Environment, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 
+const normalizeModelUrl = (url) => {
+  if (!url) return url;
+  if (typeof url !== "string") return url;
+  if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("/")) return url;
+  return `/${url}`;
+};
+
 const NormalizedModel = ({ url }) => {
-  const { scene } = useGLTF(url);
+  const normalizedUrl = useMemo(() => normalizeModelUrl(url), [url]);
+  const { scene } = useGLTF(normalizedUrl);
   const groupRef = useRef();
 
   const model = useMemo(() => {
@@ -38,14 +46,15 @@ const NormalizedModel = ({ url }) => {
 
     // Slightly smaller scale for inner margin
     const maxAxis = Math.max(size.x, size.y, size.z);
-    const scale = 2.0 / maxAxis; // Smaller than before = margin inside box
+    if (Number.isFinite(maxAxis) && maxAxis > 0) {
+      const scale = 2.0 / maxAxis; // Smaller than before = margin inside box
+      clone.scale.setScalar(scale);
 
-    clone.scale.setScalar(scale);
-
-    // Perfect centering
-    clone.position.x = -center.x * scale;
-    clone.position.y = -center.y * scale;
-    clone.position.z = -center.z * scale;
+      // Perfect centering
+      clone.position.x = -center.x * scale;
+      clone.position.y = -center.y * scale;
+      clone.position.z = -center.z * scale;
+    }
 
     return clone;
   }, [scene]);
@@ -63,6 +72,8 @@ const NormalizedModel = ({ url }) => {
 };
 
 const Category3D = ({ modelUrl }) => {
+  const normalizedUrl = useMemo(() => normalizeModelUrl(modelUrl), [modelUrl]);
+
   return (
     <div className="h-[220px] w-full">
       <Canvas
@@ -87,7 +98,7 @@ const Category3D = ({ modelUrl }) => {
         <Environment preset="studio" />
 
         <Suspense fallback={null}>
-          <NormalizedModel url={modelUrl} />
+          <NormalizedModel url={normalizedUrl} />
 
           <ContactShadows
             position={[0, -1.5, 0]}

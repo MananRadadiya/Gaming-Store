@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Huntsman V3 Pro",
       "brand": "Razer",
-      "price": 249.99,
-      "discountPrice": 219.99,
+      "price": 27999,
+      "discountPrice": 24999,
       "rating": 4.8,
       "stock": 24,
       "images": [
@@ -29,12 +29,12 @@
       "id": 2,
       "title": "K100 RGB",
       "brand": "Corsair",
-      "price": 229.99,
-      "discountPrice": 199.99,
+      "price": 24999,
+      "discountPrice": 21999,
       "rating": 4.7,
       "stock": 31,
       "images": [
-        "/images/keyboards/corsair-k100-rgb-1.avif",
+        "/images/keyboards/corsair-k100-rgb-1.png",
         "/images/keyboards/corsair-k100-rgb-2.avif"
       ],
       "category": "keyboards",
@@ -54,12 +54,12 @@
       "id": 3,
       "title": "Apex Pro TKL",
       "brand": "SteelSeries",
-      "price": 189.99,
-      "discountPrice": 169.99,
+      "price": 22999,
+      "discountPrice": 19999,
       "rating": 4.9,
       "stock": 42,
       "images": [
-        "/images/keyboards/steelseries-apex-pro-tkl-1.webp",
+        "/images/keyboards/steelseries-apex-pro-tkl-1.png",
         "/images/keyboards/steelseries-apex-pro-tkl-2.webp"
       ],
       "category": "keyboards",
@@ -78,12 +78,12 @@
       "id": 4,
       "title": "G915 X Lightspeed",
       "brand": "Logitech",
-      "price": 279.99,
-      "discountPrice": 249.99,
+      "price": 29999,
+      "discountPrice": 26999,
       "rating": 4.6,
       "stock": 18,
       "images": [
-        "/images/keyboards/logitech-g915x-lightspeed-1.webp",
+        "/images/keyboards/logitech-g915x-lightspeed-1.png",
         "/images/keyboards/logitech-g915x-lightspeed-2.webp"
       ],
       "category": "keyboards",
@@ -103,12 +103,12 @@
       "id": 5,
       "title": "Vulcan 122 AURA",
       "brand": "ROCCAT",
-      "price": 159.99,
-      "discountPrice": 139.99,
+      "price": 14999,
+      "discountPrice": 12999,
       "rating": 4.5,
       "stock": 28,
       "images": [
-        "/images/keyboards/roccat-vulcan-122-aura-1.webp",
+        "/images/keyboards/roccat-vulcan-122-aura-1.png",
         "/images/keyboards/roccat-vulcan-122-aura-2.webp"
       ],
       "category": "keyboards",
@@ -129,13 +129,13 @@
       "id": 6,
       "title": "DeathAdder V3 Pro",
       "brand": "Razer",
-      "price": 159.99,
-      "discountPrice": 139.99,
+      "price": 13999,
+      "discountPrice": 11999,
       "rating": 4.8,
       "stock": 55,
       "images": [
-        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
-        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+        "/images/mice/mouse1.png",
+        "/images/mice/mouse1-2.webp"
       ],
       "category": "mouse",
       "badge": "Pro",
@@ -154,13 +154,13 @@
       "id": 7,
       "title": "G Pro X Superlight 2",
       "brand": "Logitech",
-      "price": 159.99,
-      "discountPrice": 144.99,
+      "price": 14999,
+      "discountPrice": 12999,
       "rating": 4.9,
       "stock": 38,
       "images": [
-        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
-        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+        "/images/mice/mouse2.png",
+        "/images/mice/mouse2-1.webp"
       ],
       "category": "mouse",
       "badge": "Best Seller",
@@ -179,13 +179,13 @@
       "id": 8,
       "title": "Pulsar X2 Mini",
       "brand": "Pulsar",
-      "price": 99.99,
-      "discountPrice": 89.99,
+      "price": 8999,
+      "discountPrice": 7499,
       "rating": 4.7,
       "stock": 62,
       "images": [
-        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
-        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+        "/images/mice/mouse3.png",
+        "/images/mice/mouse3-1.webp"
       ],
       "category": "mouse",
       "description": "Ultra-lightweight symmetrical FPS mouse at only 52g with PAW3395 sensor for competitive gaming dominance.",
@@ -203,13 +203,13 @@
       "id": 9,
       "title": "DARK CORE RGB Pro",
       "brand": "Corsair",
-      "price": 89.99,
-      "discountPrice": 69.99,
+      "price": 7499,
+      "discountPrice": 6499,
       "rating": 4.5,
       "stock": 45,
       "images": [
-        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
-        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+        "/images/mice/mouse4.png",
+        "/images/mice/mouse5-1.jpg"
       ],
       "category": "mouse",
       "badge": "New",
@@ -228,13 +228,13 @@
       "id": 10,
       "title": "EC3-C Ergo Pro",
       "brand": "BenQ",
-      "price": 79.99,
-      "discountPrice": 69.99,
+      "price": 5999,
+      "discountPrice": 4999,
       "rating": 4.6,
       "stock": 33,
       "images": [
-        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600",
-        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600"
+        "/images/mice/mouse5.png",
+        "/images/mice/mouse4-1.jpg"
       ],
       "category": "mouse",
       "description": "Premium ergonomic mouse designed for extended gaming sessions with customizable weight system and precision sensor.",
@@ -254,13 +254,13 @@
       "id": 11,
       "title": "Kraken V3 Pro",
       "brand": "Razer",
-      "price": 199.99,
-      "discountPrice": 169.99,
+      "price": 16999,
+      "discountPrice": 14999,
       "rating": 4.7,
       "stock": 45,
       "images": [
-        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
-        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600"
+        "/images/headsets/headset1.jpg",
+        "/images/headsets/headset1-1.jpg"
       ],
       "category": "headsets",
       "badge": "Pro",
@@ -279,13 +279,13 @@
       "id": 12,
       "title": "VOID RGB Elite",
       "brand": "Corsair",
-      "price": 99.99,
-      "discountPrice": 79.99,
+      "price": 7999,
+      "discountPrice": 6499,
       "rating": 4.5,
       "stock": 67,
       "images": [
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600",
-        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+        "/images/headsets/headset2.jpg",
+        "/images/headsets/headset2-1.jpg"
       ],
       "category": "headsets",
       "badge": "Best Seller",
@@ -304,13 +304,13 @@
       "id": 13,
       "title": "Cloud III Wireless",
       "brand": "HyperX",
-      "price": 149.99,
-      "discountPrice": 129.99,
+      "price": 12999,
+      "discountPrice": 10999,
       "rating": 4.8,
       "stock": 33,
       "images": [
-        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600"
+        "/images/headsets/headset3.jpg",
+        "/images/headsets/headset3-1.jpg"
       ],
       "category": "headsets",
       "description": "Legendary HyperX comfort meets incredible 120-hour battery life with DTS:X spatial audio processing.",
@@ -328,13 +328,13 @@
       "id": 14,
       "title": "Arctis Nova Pro",
       "brand": "SteelSeries",
-      "price": 349.99,
-      "discountPrice": 299.99,
+      "price": 24999,
+      "discountPrice": 21999,
       "rating": 4.9,
       "stock": 12,
       "images": [
-        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600",
-        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+        "/images/headsets/headset4.jpg",
+        "/images/headsets/headset4-1.jpg"
       ],
       "category": "headsets",
       "badge": "Pro",
@@ -353,13 +353,13 @@
       "id": 15,
       "title": "ROG Strix 2",
       "brand": "ASUS",
-      "price": 129.99,
-      "discountPrice": 109.99,
+      "price": 9999,
+      "discountPrice": 8499,
       "rating": 4.6,
       "stock": 28,
       "images": [
-        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600",
-        "https://images.unsplash.com/photo-1599669454699-248893623440?w=600"
+        "/images/headsets/headset5.jpg",
+        "/images/headsets/headset5-1.jpg"
       ],
       "category": "headsets",
       "badge": "New",
@@ -380,13 +380,13 @@
       "id": 16,
       "title": "ASUS ROG Swift Pro OLED",
       "brand": "ASUS",
-      "price": 799.99,
-      "discountPrice": 699.99,
+      "price": 109999,
+      "discountPrice": 94999,
       "rating": 4.9,
       "stock": 8,
       "images": [
-        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
-        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+        "/images/monitors/monitor1.jpg",
+        "/images/monitors/monitor1-1.jpg"
       ],
       "category": "monitors",
       "badge": "Pro",
@@ -405,13 +405,13 @@
       "id": 17,
       "title": "LG 27GP850",
       "brand": "LG",
-      "price": 399.99,
-      "discountPrice": 349.99,
+      "price": 34999,
+      "discountPrice": 29999,
       "rating": 4.7,
       "stock": 22,
       "images": [
-        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
-        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+        "/images/monitors/monitor2.jpg",
+        "/images/monitors/monitor2-1.jpg"
       ],
       "category": "monitors",
       "badge": "Best Seller",
@@ -430,13 +430,13 @@
       "id": 18,
       "title": "BenQ EW2780U",
       "brand": "BenQ",
-      "price": 599.99,
-      "discountPrice": 529.99,
+      "price": 52999,
+      "discountPrice": 46999,
       "rating": 4.6,
       "stock": 15,
       "images": [
-        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
-        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+        "/images/monitors/monitor3.png",
+        "/images/monitors/monitor3-1.jpg"
       ],
       "category": "monitors",
       "description": "27-inch 4K professional gaming monitor with eye-care technology and factory calibrated color for creative professionals.",
@@ -454,13 +454,13 @@
       "id": 19,
       "title": "MSI Oculux GN30SQPX",
       "brand": "MSI",
-      "price": 449.99,
-      "discountPrice": 399.99,
+      "price": 41999,
+      "discountPrice": 37999,
       "rating": 4.8,
       "stock": 18,
       "images": [
-        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
-        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+        "/images/monitors/monitor5.jpg",
+        "/images/monitors/monitor5-1.jpg"
       ],
       "category": "monitors",
       "badge": "New",
@@ -479,13 +479,13 @@
       "id": 20,
       "title": "Dell S2721DGF",
       "brand": "Dell",
-      "price": 349.99,
-      "discountPrice": 299.99,
+      "price": 27999,
+      "discountPrice": 24499,
       "rating": 4.5,
       "stock": 31,
       "images": [
-        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600",
-        "https://images.unsplash.com/photo-1587289810167-8b5fbb0e8e45?w=600"
+        "/images/monitors/monitor4.jpg",
+        "/images/monitors/monitor4-1.jpg"
       ],
       "category": "monitors",
       "description": "27-inch 1440p IPS gaming monitor at 165Hz with excellent color reproduction and reliable gaming performance.",
@@ -505,13 +505,13 @@
       "id": 21,
       "title": "SteelSeries QcK Prism Xl",
       "brand": "SteelSeries",
-      "price": 99.99,
-      "discountPrice": 79.99,
+      "price": 4999,
+      "discountPrice": 4299,
       "rating": 4.6,
       "stock": 89,
       "images": [
-        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
-        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+        "/images/mousepads/mousepad1.png",
+        "/images/mousepads/mousepad1-1.jpg"
       ],
       "category": "mousepads",
       "badge": "Best Seller",
@@ -530,13 +530,13 @@
       "id": 22,
       "title": "Corsair MM800 RGB",
       "brand": "Corsair",
-      "price": 79.99,
-      "discountPrice": 69.99,
+      "price": 3999,
+      "discountPrice": 3499,
       "rating": 4.5,
       "stock": 64,
       "images": [
-        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
-        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+        "/images/mousepads/mousepad2.png",
+        "/images/mousepads/mousepad2-1.jpg"
       ],
       "category": "mousepads",
       "description": "Extended RGB mouse pad with dynamic iCUE lighting and optimized surface for gaming mice.",
@@ -554,13 +554,13 @@
       "id": 23,
       "title": "Razer Goliathus Chroma",
       "brand": "Razer",
-      "price": 89.99,
-      "discountPrice": 74.99,
+      "price": 4499,
+      "discountPrice": 3799,
       "rating": 4.7,
       "stock": 43,
       "images": [
-        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
-        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+        "/images/mousepads/mousepad3.png",
+        "/images/mousepads/mousepad3-1.jpg"
       ],
       "category": "mousepads",
       "badge": "Pro",
@@ -579,13 +579,13 @@
       "id": 24,
       "title": "HyperX Fury S XL",
       "brand": "HyperX",
-      "price": 69.99,
-      "discountPrice": 59.99,
+      "price": 2499,
+      "discountPrice": 1999,
       "rating": 4.4,
       "stock": 72,
       "images": [
-        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
-        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+        "/images/mousepads/mousepad4.png",
+        "/images/mousepads/mousepad4-1.jpg"
       ],
       "category": "mousepads",
       "badge": "New",
@@ -604,13 +604,13 @@
       "id": 25,
       "title": "ASUS ROG Scabbard Extended",
       "brand": "ASUS",
-      "price": 59.99,
-      "discountPrice": 49.99,
+      "price": 2999,
+      "discountPrice": 2499,
       "rating": 4.5,
       "stock": 56,
       "images": [
-        "https://images.unsplash.com/photo-1547394765-185342881546?w=600",
-        "https://images.unsplash.com/photo-1616763355603-9755a002cda7?w=600"
+        "/images/mousepads/mousepad5.png",
+        "/images/mousepads/mousepad5-1.jpg"
       ],
       "category": "mousepads",
       "description": "Durable extended mousepad with reinforced stitching and optimized cloth surface for gaming and productivity.",
@@ -630,13 +630,13 @@
       "id": 26,
       "title": "Secretlab Titan Evo",
       "brand": "Secretlab",
-      "price": 449.99,
-      "discountPrice": 399.99,
+      "price": 34999,
+      "discountPrice": 31999,
       "rating": 4.9,
       "stock": 12,
       "images": [
-        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
-        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+        "/images/gaming-chairs/chair1.png",
+        "/images/gaming-chairs/chair1-1.jpg"
       ],
       "category": "gamingchairs",
       "badge": "Pro",
@@ -655,13 +655,13 @@
       "id": 27,
       "title": "Herman Miller Gaming Chair",
       "brand": "Herman Miller",
-      "price": 599.99,
-      "discountPrice": 549.99,
+      "price": 149999,
+      "discountPrice": 134999,
       "rating": 4.8,
       "stock": 5,
       "images": [
-        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
-        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+        "/images/gaming-chairs/chair2.png",
+        "/images/gaming-chairs/chair2-1.jpg"
       ],
       "category": "gamingchairs",
       "badge": "Pro",
@@ -680,13 +680,13 @@
       "id": 28,
       "title": "Autonomous Ergo Chair Pro",
       "brand": "Autonomous",
-      "price": 299.99,
-      "discountPrice": 259.99,
+      "price": 21999,
+      "discountPrice": 18999,
       "rating": 4.6,
       "stock": 28,
       "images": [
-        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
-        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+        "/images/gaming-chairs/chair3.png",
+        "/images/gaming-chairs/chair3-1.jpg"
       ],
       "category": "gamingchairs",
       "badge": "Best Seller",
@@ -705,13 +705,13 @@
       "id": 29,
       "title": "GTOWER Apex Racing",
       "brand": "GTOWER",
-      "price": 199.99,
-      "discountPrice": 169.99,
+      "price": 12999,
+      "discountPrice": 10999,
       "rating": 4.4,
       "stock": 42,
       "images": [
-        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
-        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+        "/images/gaming-chairs/chair5.png",
+        "/images/gaming-chairs/chair5-1.jpg"
       ],
       "category": "gamingchairs",
       "badge": "New",
@@ -730,13 +730,13 @@
       "id": 30,
       "title": "DXRacer King Series",
       "brand": "DXRacer",
-      "price": 349.99,
-      "discountPrice": 299.99,
+      "price": 27999,
+      "discountPrice": 23999,
       "rating": 4.5,
       "stock": 19,
       "images": [
-        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600",
-        "https://images.unsplash.com/photo-1551632786-de41ec16a83b?w=600"
+        "/images/gaming-chairs/chair4.png",
+        "/images/gaming-chairs/chair4-1.jpg"
       ],
       "category": "gamingchairs",
       "description": "Premium gaming chair with high-density foam and reclinable design for maximum comfort during extended sessions.",
@@ -756,13 +756,13 @@
       "id": 31,
       "title": "Xbox Elite Series 2",
       "brand": "Microsoft",
-      "price": 179.99,
-      "discountPrice": 149.99,
+      "price": 15999,
+      "discountPrice": 13999,
       "rating": 4.7,
       "stock": 25,
       "images": [
-        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
-        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+        "/images/controllers/controller1.png",
+        "/images/controllers/controller1-1.jpg"
       ],
       "category": "controllers",
       "badge": "Pro",
@@ -781,13 +781,13 @@
       "id": 32,
       "title": "DualSense Edge",
       "brand": "Sony",
-      "price": 199.99,
-      "discountPrice": 179.99,
+      "price": 18999,
+      "discountPrice": 16999,
       "rating": 4.8,
       "stock": 15,
       "images": [
-        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
-        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+        "/images/controllers/controller2.png",
+        "/images/controllers/controller2-1.jpg"
       ],
       "category": "controllers",
       "badge": "Pro",
@@ -806,13 +806,13 @@
       "id": 33,
       "title": "8BitDo Ultimate",
       "brand": "8BitDo",
-      "price": 89.99,
-      "discountPrice": 74.99,
+      "price": 5999,
+      "discountPrice": 4999,
       "rating": 4.6,
       "stock": 47,
       "images": [
-        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
-        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+        "/images/controllers/controller5.png",
+        "/images/controllers/controller5-1.jpg"
       ],
       "category": "controllers",
       "badge": "Best Seller",
@@ -831,13 +831,13 @@
       "id": 34,
       "title": "GameCube Ultimate Wireless",
       "brand": "PowerA",
-      "price": 59.99,
-      "discountPrice": 49.99,
+      "price": 3499,
+      "discountPrice": 2999,
       "rating": 4.4,
       "stock": 31,
       "images": [
-        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
-        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+        "/images/controllers/controller3.png",
+        "/images/controllers/controller3-1.jpg"
       ],
       "category": "controllers",
       "badge": "New",
@@ -856,13 +856,13 @@
       "id": 35,
       "title": "Razer Wolverine V3 Pro",
       "brand": "Razer",
-      "price": 169.99,
-      "discountPrice": 149.99,
+      "price": 13999,
+      "discountPrice": 11999,
       "rating": 4.5,
       "stock": 20,
       "images": [
-        "https://images.unsplash.com/photo-1606841837239-c5a1a8a07af7?w=600",
-        "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=600"
+        "/images/controllers/controller4.png",
+        "/images/controllers/controller4-1.jpg"
       ],
       "category": "controllers",
       "description": "Premium Xbox-compatible controller with enhanced triggers and customizable button mapping.",
@@ -882,13 +882,13 @@
       "id": 36,
       "title": "Logitech BRIO 4K",
       "brand": "Logitech",
-      "price": 199.99,
-      "discountPrice": 169.99,
+      "price": 18999,
+      "discountPrice": 16499,
       "rating": 4.7,
       "stock": 19,
       "images": [
-        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
-        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+        "/images/webcams/webcam2.png",
+        "/images/webcams/webcam2-1.jpg"
       ],
       "category": "webcams",
       "badge": "Pro",
@@ -907,13 +907,13 @@
       "id": 37,
       "title": "Razer Kiyo Pro",
       "brand": "Razer",
-      "price": 299.99,
-      "discountPrice": 249.99,
+      "price": 14999,
+      "discountPrice": 12999,
       "rating": 4.8,
       "stock": 12,
       "images": [
-        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
-        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+        "/images/webcams/webcam1.png",
+        "/images/webcams/webcam1-1.jpg"
       ],
       "category": "webcams",
       "badge": "Best Seller",
@@ -932,13 +932,13 @@
       "id": 38,
       "title": "Corsair Elgato Facecam Pro",
       "brand": "Corsair",
-      "price": 299.99,
-      "discountPrice": 259.99,
+      "price": 16999,
+      "discountPrice": 14499,
       "rating": 4.6,
       "stock": 18,
       "images": [
-        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
-        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+        "/images/webcams/webcam3.png",
+        "/images/webcams/webcam3-1.jpg"
       ],
       "category": "webcams",
       "description": "Professional 1080p streaming camera with Sony sensor and superior image quality for content creators.",
@@ -956,13 +956,13 @@
       "id": 39,
       "title": "HyperX Vision S",
       "brand": "HyperX",
-      "price": 159.99,
-      "discountPrice": 139.99,
+      "price": 7999,
+      "discountPrice": 6999,
       "rating": 4.5,
       "stock": 26,
       "images": [
-        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
-        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+        "/images/webcams/webcam4.png",
+        "/images/webcams/webcam4-1.jpg"
       ],
       "category": "webcams",
       "badge": "New",
@@ -981,13 +981,13 @@
       "id": 40,
       "title": "ASUS ROG Eve Start",
       "brand": "ASUS",
-      "price": 179.99,
-      "discountPrice": 149.99,
+      "price": 4999,
+      "discountPrice": 3999,
       "rating": 4.4,
       "stock": 22,
       "images": [
-        "https://images.unsplash.com/photo-1598875706250-cd011dcc3b2d?w=600",
-        "https://images.unsplash.com/photo-1606986628025-35d57e735ae0?w=600"
+        "/images/webcams/webcam5.png",
+        "/images/webcams/webcam5-1.jpg"
       ],
       "category": "webcams",
       "description": "Gaming-oriented 1080p webcam with built-in microphone and adjustable stand for flexible setup.",
@@ -1007,13 +1007,13 @@
       "id": 41,
       "title": "Audio-Technica AT4040",
       "brand": "Audio-Technica",
-      "price": 249.99,
-      "discountPrice": 219.99,
+      "price": 21999,
+      "discountPrice": 18999,
       "rating": 4.8,
       "stock": 14,
       "images": [
-        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
-        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+        "/images/microphones/mic1.png",
+        "/images/microphones/mic1-1.jpg"
       ],
       "category": "microphones",
       "badge": "Pro",
@@ -1032,13 +1032,13 @@
       "id": 42,
       "title": "Shure SM7B",
       "brand": "Shure",
-      "price": 399.99,
-      "discountPrice": 349.99,
+      "price": 36999,
+      "discountPrice": 32999,
       "rating": 4.9,
       "stock": 8,
       "images": [
-        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
-        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+        "/images/microphones/mic2.png",
+        "/images/microphones/mic2-1.jpg"
       ],
       "category": "microphones",
       "badge": "Pro",
@@ -1057,13 +1057,13 @@
       "id": 43,
       "title": "Blue Yeti X",
       "brand": "Blue Microphones",
-      "price": 129.99,
-      "discountPrice": 99.99,
+      "price": 11999,
+      "discountPrice": 9999,
       "rating": 4.6,
       "stock": 35,
       "images": [
-        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
-        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+        "/images/microphones/mic3.png",
+        "/images/microphones/mic3-1.jpg"
       ],
       "category": "microphones",
       "badge": "Best Seller",
@@ -1082,13 +1082,13 @@
       "id": 44,
       "title": "HyperX QuadCast S",
       "brand": "HyperX",
-      "price": 139.99,
-      "discountPrice": 119.99,
+      "price": 13499,
+      "discountPrice": 11499,
       "rating": 4.5,
       "stock": 28,
       "images": [
-        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
-        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+        "/images/microphones/mic4.png",
+        "/images/microphones/mic4-1.jpg"
       ],
       "category": "microphones",
       "badge": "New",
@@ -1107,13 +1107,13 @@
       "id": 45,
       "title": "Rode Wireless GO II",
       "brand": "Rode",
-      "price": 299.99,
-      "discountPrice": 259.99,
+      "price": 24999,
+      "discountPrice": 21999,
       "rating": 4.7,
       "stock": 16,
       "images": [
-        "https://images.unsplash.com/photo-1589003077984-894e133da26d?w=600",
-        "https://images.unsplash.com/photo-1614613535308-eb5fbd8b4fcd?w=600"
+        "/images/microphones/mic5.png",
+        "/images/microphones/mic5-1.jpg"
       ],
       "category": "microphones",
       "description": "Compact wireless lavalier microphone system with solid-state recording for on-the-go content creators.",
@@ -1133,12 +1133,12 @@
       "id": 46,
       "title": "NVIDIA RTX 5090",
       "brand": "NVIDIA",
-      "price": 1999.99,
-      "discountPrice": 1899.99,
+      "price": 189999,
+      "discountPrice": 179999,
       "rating": 4.8,
       "stock": 3,
       "images": [
-        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
+        "/images/graphics-cards/graphic-card-1.png",
         "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
       ],
       "category": "graphicscards",
@@ -1158,13 +1158,13 @@
       "id": 47,
       "title": "ASUS ROG RTX 5080",
       "brand": "ASUS",
-      "price": 999.99,
-      "discountPrice": 899.99,
+      "price": 109999,
+      "discountPrice": 99999,
       "rating": 4.7,
       "stock": 8,
       "images": [
-        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
-        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+        "/images/graphics-cards/graphic-card-2.png",
+        "/images/graphicscards/graphics-card-2-1.jpg"
       ],
       "category": "graphicscards",
       "badge": "Best Seller",
@@ -1183,13 +1183,13 @@
       "id": 48,
       "title": "Corsair RTX 5070 Ti",
       "brand": "Corsair",
-      "price": 749.99,
-      "discountPrice": 699.99,
+      "price": 74999,
+      "discountPrice": 67999,
       "rating": 4.6,
       "stock": 15,
       "images": [
-        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
-        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+        "/images/graphics-cards/graphic-card-5.png",
+        "/images/graphicscards/graphics-card-5-1.jpg"
       ],
       "category": "graphicscards",
       "description": "Balanced mid-to-high-end GPU perfect for 1440p/4K gaming with excellent power efficiency.",
@@ -1207,13 +1207,13 @@
       "id": 49,
       "title": "Gigabyte RTX 5070",
       "brand": "Gigabyte",
-      "price": 549.99,
-      "discountPrice": 499.99,
+      "price": 52999,
+      "discountPrice": 47999,
       "rating": 4.5,
       "stock": 22,
       "images": [
-        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
-        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+        "/images/graphics-cards/graphic-card-3.png",
+        "/images/graphicscards/graphics-card-3-1.jpg"
       ],
       "category": "graphicscards",
       "badge": "New",
@@ -1232,13 +1232,13 @@
       "id": 50,
       "title": "MSI RTX 5060 Ti Gaming",
       "brand": "MSI",
-      "price": 349.99,
-      "discountPrice": 299.99,
+      "price": 34999,
+      "discountPrice": 29999,
       "rating": 4.4,
       "stock": 31,
       "images": [
-        "https://images.unsplash.com/photo-1587829210895-54ffc8db7516?w=600",
-        "https://images.unsplash.com/photo-1622217272063-a1e1d4f5f0d8?w=600"
+        "/images/graphics-cards/graphic-card-4.png",
+        "/images/graphicscards/graphics-card-4-1.jpg"
       ],
       "category": "graphicscards",
       "description": "Entry-level enthusiast GPU perfect for 1080p high-end gaming and content creation at budget-friendly price.",
@@ -1253,56 +1253,190 @@
       }
     }
   ],
+  "authors": [
+    {
+      "id": "alex-chen",
+      "name": "Alex Chen",
+      "avatar": "https://ui-avatars.com/api/?name=Alex+Chen&background=00FF88&color=000&bold=true&size=128",
+      "bio": "Hardware enthusiast and GPU performance analyst with 8 years of tech journalism. Specializing in graphics cards, processors, and benchmark testing.",
+      "role": "Senior Hardware Editor",
+      "social": { "twitter": "alexchen_hw", "youtube": "AlexChenTech", "twitch": "alexhardware" },
+      "joined": "2022-03-15"
+    },
+    {
+      "id": "sarah-kim",
+      "name": "Sarah Kim",
+      "avatar": "https://ui-avatars.com/api/?name=Sarah+Kim&background=BD00FF&color=fff&bold=true&size=128",
+      "bio": "Former pro Valorant player turned esports journalist. Covering competitive gaming, team dynamics, and tournament analysis across all major titles.",
+      "role": "Esports Correspondent",
+      "social": { "twitter": "sarahkim_esports", "youtube": "SarahKimGG", "twitch": "sarahplays" },
+      "joined": "2023-01-10"
+    },
+    {
+      "id": "mike-torres",
+      "name": "Mike Torres",
+      "avatar": "https://ui-avatars.com/api/?name=Mike+Torres&background=00E0FF&color=000&bold=true&size=128",
+      "bio": "Professional setup builder and content creator. Designed over 200 custom gaming battlestations for clients ranging from casual gamers to pro teams.",
+      "role": "Setup & Build Expert",
+      "social": { "twitter": "miketorres_builds", "youtube": "TorresBuilds" },
+      "joined": "2023-06-20"
+    },
+    {
+      "id": "dana-williams",
+      "name": "Dana Williams",
+      "avatar": "https://ui-avatars.com/api/?name=Dana+Williams&background=FF6B35&color=fff&bold=true&size=128",
+      "bio": "Gaming industry analyst covering market trends, cloud gaming, and the future of interactive entertainment. MBA from Stanford with 10+ years in tech.",
+      "role": "Industry Analyst",
+      "social": { "twitter": "danawilliams_tech", "linkedin": "danawilliams" },
+      "joined": "2021-11-05"
+    },
+    {
+      "id": "jordan-lee",
+      "name": "Jordan Lee",
+      "avatar": "https://ui-avatars.com/api/?name=Jordan+Lee&background=4ECDC4&color=000&bold=true&size=128",
+      "bio": "Peripheral specialist and mechanical keyboard aficionado. Testing and reviewing gaming gear with scientific precision and real-world gaming tests.",
+      "role": "Peripherals Reviewer",
+      "social": { "twitter": "jordanlee_keys", "youtube": "JordanLeeReviews" },
+      "joined": "2024-02-14"
+    },
+    {
+      "id": "nova-wright",
+      "name": "Nova Wright",
+      "avatar": "https://ui-avatars.com/api/?name=Nova+Wright&background=E63946&color=fff&bold=true&size=128",
+      "bio": "Competitive FPS coach and performance optimization specialist. Radiant in Valorant, Global Elite in CS2. Helping gamers reach their peak.",
+      "role": "Performance Coach & Writer",
+      "social": { "twitter": "novawright_fps", "twitch": "novawright", "youtube": "NovaFPS" },
+      "joined": "2024-05-01"
+    }
+  ],
   "blogs": [
     {
       "id": 1,
       "title": "RTX 5090: Redefining Gaming Performance",
-      "excerpt": "NVIDIA's latest flagship GPU sets new standards with unprecedented CUDA core count and memory bandwidth.",
+      "slug": "rtx-5090-redefining-gaming-performance",
+      "excerpt": "NVIDIA's latest flagship GPU sets new standards with unprecedented CUDA core count and memory bandwidth. We benchmark everything.",
       "category": "Hardware",
+      "tags": ["Hardware", "Performance", "GPU", "NVIDIA"],
+      "authorId": "alex-chen",
       "author": "Alex Chen",
       "date": "2026-02-10",
-      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600",
-      "readTime": "8 min"
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800",
+      "readTime": "8 min",
+      "featured": true,
+      "likes": 342,
+      "content": "## The Next Generation of GPU Power\n\nNVIDIA has done it again. The **RTX 5090** represents a quantum leap in graphics processing, delivering performance numbers that make last generation look pedestrian.\n\n### Raw Specifications\n\n| Spec | RTX 5090 | RTX 4090 |\n|------|----------|----------|\n| CUDA Cores | 21,760 | 16,384 |\n| Base Clock | 2.01 GHz | 2.23 GHz |\n| Boost Clock | 2.9 GHz | 2.52 GHz |\n| VRAM | 32GB GDDR7 | 24GB GDDR6X |\n| TDP | 450W | 450W |\n\n### Benchmark Results\n\nIn our testing across 20 modern titles at 4K Ultra settings:\n\n- **Cyberpunk 2077 Overdrive**: 145 FPS average (up from 62 FPS on 4090)\n- **Alan Wake 2 Path Traced**: 120 FPS average\n- **Counter-Strike 2**: 800+ FPS at 1080p\n- **Valorant**: 1200+ FPS uncapped\n\n### The DLSS 4.0 Revolution\n\nThe real game-changer is DLSS 4.0 with its new **Multi Frame Generation** technology. Instead of generating one interpolated frame, the RTX 5090 can generate up to *three* additional frames per rendered frame.\n\n```\nRendered Frame → DLSS 4.0 → 4x Output Frames\nResult: 60 FPS internal → 240 FPS output\n```\n\n> \"This isn't just an incremental upgrade. The RTX 5090 fundamentally changes what's possible in real-time rendering.\" — NVIDIA CEO\n\n### Power & Cooling\n\nDespite the massive performance uplift, NVIDIA has kept the TDP at 450W through their new **TSMC 3nm** process. The reference cooler features a completely redesigned vapor chamber with 30% more surface area.\n\n### Should You Upgrade?\n\nIf you're on an RTX 3080 or older, this is the card you've been waiting for. RTX 4090 owners might want to wait for the inevitable Ti variant, but the performance gap is significant enough to justify the leap.\n\n### Final Verdict\n\nThe RTX 5090 earns our highest recommendation. It's not just the fastest GPU ever made — it's a glimpse into the future of gaming."
     },
     {
       "id": 2,
       "title": "2026 Esports World Championship Highlights",
-      "excerpt": "Witness the most epic competitive gaming moments as teams battle for the $5M prize pool.",
+      "slug": "2026-esports-world-championship-highlights",
+      "excerpt": "Witness the most epic competitive gaming moments as teams battle for the $5M prize pool across Valorant, CS2, and League of Legends.",
       "category": "Esports",
+      "tags": ["Esports", "Competitive Tips", "Valorant", "CS2"],
+      "authorId": "sarah-kim",
       "author": "Sarah Kim",
       "date": "2026-02-08",
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600",
-      "readTime": "12 min"
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+      "readTime": "12 min",
+      "featured": true,
+      "likes": 567,
+      "content": "## The Biggest Tournament of 2026\n\nThe 2026 Esports World Championship brought together the best teams from across the globe, competing across three marquee titles for a combined **$5 million** prize pool.\n\n### Valorant Grand Finals\n\nTeam NEXUS vs. Dynasty Esports delivered what many are calling the greatest Valorant series ever played.\n\n- **Map 1 (Ascent)**: NEXUS 13-11 — CyberViper's 1v3 clutch in round 23 was legendary\n- **Map 2 (Lotus)**: Dynasty 13-7 — Complete dominance from the Korean squad\n- **Map 3 (Bind)**: NEXUS 13-12 — Overtime thriller with back-to-back aces\n- **Map 4 (Haven)**: Dynasty 13-10 — Tactical masterclass\n- **Map 5 (Fracture)**: NEXUS 13-9 — The reverse sweep completed\n\n> \"I've never felt pressure like that in my career. When we went down 1-2, the crowd energy just lifted us.\" — CyberViper, Team NEXUS\n\n### Counter-Strike 2 Finals\n\nThe CS2 finals saw FaZe Clan take on Natus Vincere in a rematch of their 2025 rivalry:\n\n```\nFaZe   16-14  NAVI  (Mirage)\nNAVI   16-12  FaZe  (Inferno)\nFaZe   16-13  NAVI  (Anubis)\n```\n\n### League of Legends\n\nT1's dominance continued with Faker leading the team to yet another world championship, their 5th title under his leadership.\n\n### The Numbers\n\n| Metric | Value |\n|--------|-------|\n| Peak Viewership | 8.2M concurrent |\n| Total Watch Hours | 142M |\n| Prize Pool | $5,000,000 |\n| Teams | 48 |\n| Countries | 24 |\n\n### What This Means for Esports\n\nThe 2026 championship proved that competitive gaming has truly arrived as a mainstream spectator sport. With viewership numbers rivaling traditional sports events, the future has never looked brighter."
     },
     {
       "id": 3,
       "title": "Building the $10K Ultra Gaming Setup",
-      "excerpt": "A comprehensive guide to assembling the ultimate gaming battlestation with zero compromises.",
+      "slug": "building-the-10k-ultra-gaming-setup",
+      "excerpt": "A comprehensive guide to assembling the ultimate gaming battlestation with zero compromises — from the CPU to the chair.",
       "category": "Guides",
+      "tags": ["Setup Builds", "Hardware", "Performance"],
+      "authorId": "mike-torres",
       "author": "Mike Torres",
       "date": "2026-02-05",
-      "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600",
-      "readTime": "15 min"
+      "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800",
+      "readTime": "15 min",
+      "featured": false,
+      "likes": 891,
+      "content": "## The Ultimate No-Compromise Build\n\nAfter building over 200 custom setups, I've designed what I consider the perfect $10,000 gaming battlestation. Every component has been selected for maximum performance, aesthetic cohesion, and long-term value.\n\n### The Parts List\n\n| Component | Pick | Price |\n|-----------|------|-------|\n| GPU | RTX 5090 Founders | $1,999 |\n| CPU | AMD Ryzen 9 9950X3D | $699 |\n| Motherboard | ASUS ROG Crosshair X870E | $699 |\n| RAM | G.Skill Trident Z5 64GB DDR5-8000 | $349 |\n| SSD | Samsung 990 Pro 4TB | $399 |\n| PSU | Corsair HX1500i | $399 |\n| Case | Lian Li O11D EVO RGB | $189 |\n| Cooling | EKWB Custom Loop | $1,200 |\n| Monitor | Samsung Odyssey Neo G9 57\" | $2,499 |\n| Keyboard | Razer Huntsman V3 Pro | $249 |\n| Mouse | Razer DeathAdder V3 Pro | $149 |\n| Chair | Secretlab TITAN Evo 2026 | $549 |\n| **Total** | | **$9,379** |\n\n### Why These Choices?\n\n#### GPU: RTX 5090\nNo explanation needed. It's the fastest consumer GPU ever made, and for a $10K build, nothing else makes sense.\n\n#### CPU: Ryzen 9 9950X3D\nThe 3D V-Cache technology gives this chip an *unfair advantage* in gaming workloads. The extra cache means fewer memory bottlenecks.\n\n```\nBenchmark Results:\n- Cinebench R24: 42,100 Multi / 2,180 Single\n- Gaming Avg (1080p): 5-15% faster than 14900KS\n- Power Draw: 120W vs Intel's 250W+\n```\n\n### Cable Management\n\n> Pro tip: Route all cables through the back panel BEFORE installing the motherboard. Trust me, your future self will thank you.\n\n### The Finished Build\n\nThe end result is a machine that runs every game at 4K 120+ FPS, handles content creation workflows effortlessly, and looks absolutely stunning with its custom water cooling loop.\n\n### Final Thoughts\n\nYou don't need to spend $10K to have a great gaming experience. But if you want the *best possible* setup with zero compromises, this is how you do it."
     },
     {
       "id": 4,
-      "title": "Cloud Gaming 2026: Local Hardware Obsolete?",
-      "excerpt": "As cloud gaming technology matures, we examine whether dedicated hardware still has a future.",
+      "title": "Cloud Gaming 2026: Is Local Hardware Obsolete?",
+      "slug": "cloud-gaming-2026-local-hardware-obsolete",
+      "excerpt": "As cloud gaming technology matures with sub-10ms latency, we examine whether dedicated hardware still has a future in competitive gaming.",
       "category": "Industry",
+      "tags": ["Performance", "Hardware", "Competitive Tips"],
+      "authorId": "dana-williams",
       "author": "Dana Williams",
       "date": "2026-02-01",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600",
-      "readTime": "10 min"
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800",
+      "readTime": "10 min",
+      "featured": false,
+      "likes": 234,
+      "content": "## The State of Cloud Gaming in 2026\n\nCloud gaming has evolved dramatically since its rocky start. With NVIDIA GeForce NOW Ultimate achieving **sub-10ms total latency** and Xbox Cloud Gaming running at native 4K, the question isn't whether cloud gaming works — it's whether you still need expensive hardware.\n\n### The Latency Problem (Mostly Solved)\n\nThe biggest criticism of cloud gaming has always been latency. Here's where we stand in 2026:\n\n| Service | Total Latency | Resolution | FPS |\n|---------|---------------|------------|-----|\n| GeForce NOW Ultimate | 8ms | 4K | 120 |\n| Xbox Cloud Gaming | 12ms | 4K | 60 |\n| PlayStation Portal+ | 15ms | 1440p | 120 |\n| Amazon Luna Pro | 18ms | 4K | 60 |\n\n> For context, a typical 144Hz monitor adds ~7ms of display latency. Cloud gaming latency is approaching display-level overhead.\n\n### Where Cloud Wins\n\n- **Zero upfront hardware cost** — play on any screen\n- **Instant game access** — no downloads, no updates\n- **Always current hardware** — automatic GPU upgrades\n- **Multi-device** — start on PC, continue on tablet\n\n### Where Local Still Dominates\n\n- **Competitive gaming** — pros need every millisecond\n- **Modding** — can't mod cloud games\n- **Offline access** — no internet, no games\n- **Ownership** — you don't truly own streamed games\n\n### The Hybrid Future\n\nI believe the future is hybrid. Casual gamers will increasingly move to cloud, while competitive and enthusiast gamers will continue investing in local hardware. The market isn't zero-sum.\n\n```\nPredicted Market Split by 2028:\n- Cloud Gaming: 40% of total gaming hours\n- Local Hardware: 45% of total gaming hours  \n- Mobile: 15% of total gaming hours\n```\n\n### Bottom Line\n\nLocal hardware isn't going anywhere, but it's becoming a *choice* rather than a *necessity*. And that's a good thing for gaming accessibility."
     },
     {
       "id": 5,
-      "title": "Mechanical vs Optical Switches Deep Dive",
-      "excerpt": "The definitive guide to keyboard switch technology and finding your perfect typing/gaming experience.",
+      "title": "Mechanical vs Optical Switches: The Definitive Guide",
+      "slug": "mechanical-vs-optical-switches-deep-dive",
+      "excerpt": "Everything you need to know about keyboard switch technology — from Cherry MX to Razer Optical to Hall Effect sensors.",
       "category": "Hardware",
+      "tags": ["Hardware", "Setup Builds", "Competitive Tips"],
+      "authorId": "jordan-lee",
       "author": "Jordan Lee",
       "date": "2026-01-28",
-      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600",
-      "readTime": "7 min"
+      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800",
+      "readTime": "7 min",
+      "featured": false,
+      "likes": 456,
+      "content": "## Understanding Switch Technology\n\nChoosing the right keyboard switch is one of the most personal decisions a gamer can make. Let's break down every major switch technology available in 2026.\n\n### Mechanical Switches\n\nTraditional mechanical switches use a physical metal contact to register keypresses.\n\n**Pros:**\n- Tactile feedback options (Brown, Clear)\n- Satisfying click options (Blue, Green)\n- Proven reliability (50-100M actuations)\n\n**Cons:**\n- Debounce delay (~5ms)\n- Fixed actuation point\n- Physical contact wear over time\n\n### Optical Switches\n\nOptical switches use a light beam interrupted by the stem to register input.\n\n**Pros:**\n- Zero debounce delay\n- Faster response time\n- No physical contact = longer lifespan\n- Water resistant\n\n**Cons:**\n- Limited tactile options\n- Can feel \"mushy\" to some users\n\n### Hall Effect / Magnetic Switches\n\nThe newest technology uses magnets and Hall Effect sensors for infinitely adjustable actuation.\n\n```\nActuation Range: 0.1mm - 4.0mm\nRapid Trigger: Yes (0.1mm reset)\nLifespan: 100M+ actuations (no contact)\n```\n\n> Hall Effect switches are the future. The ability to adjust actuation per-key and enable rapid trigger is a genuine competitive advantage.\n\n### Switch Comparison Table\n\n| Feature | Mechanical | Optical | Hall Effect |\n|---------|-----------|---------|-------------|\n| Response Time | ~5ms | ~1ms | ~0.1ms |\n| Actuation | Fixed | Fixed | Adjustable |\n| Rapid Trigger | No | No | Yes |\n| Lifespan | 50-100M | 100M+ | 100M+ |\n| Price | $$ | $$ | $$$ |\n\n### My Recommendation\n\nFor **competitive gaming**: Hall Effect (Razer, Wooting, SteelSeries)\nFor **typing + gaming**: Mechanical tactile (Cherry MX Brown, Gateron Brown)\nFor **budget gaming**: Optical linear (Razer Yellow, Gateron Optical)\n\n### Final Thoughts\n\nThere's no objectively \"best\" switch — only the best switch for *your* use case. Try before you buy if possible."
+    },
+    {
+      "id": 6,
+      "title": "Pro Player Settings: What the Best Use in 2026",
+      "slug": "pro-player-settings-2026",
+      "excerpt": "We analyzed the settings of 100+ professional players across Valorant, CS2, and Apex Legends to find the most common configurations.",
+      "category": "Esports",
+      "tags": ["Esports", "Competitive Tips", "Performance"],
+      "authorId": "nova-wright",
+      "author": "Nova Wright",
+      "date": "2026-01-25",
+      "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800",
+      "readTime": "9 min",
+      "featured": false,
+      "likes": 723,
+      "content": "## What Do Pro Players Actually Use?\n\nWe surveyed over 100 professional FPS players to compile the definitive guide to competitive settings in 2026.\n\n### Mouse Settings\n\n| Setting | Most Common | Range |\n|---------|-------------|-------|\n| DPI | 800 | 400-1600 |\n| eDPI (Valorant) | 280 | 180-400 |\n| eDPI (CS2) | 880 | 600-1200 |\n| Polling Rate | 8000Hz | 1000-8000Hz |\n| Shape | Symmetrical | - |\n| Weight | 55-65g | 45-80g |\n\n### Monitor Settings\n\n```\nResolution: 1920x1080 (82% of pros)\nRefresh Rate: 360Hz (48%) / 240Hz (38%)\nResponse Time: <1ms\nPanel: IPS/Fast IPS\n```\n\n> Contrary to popular belief, most pros still play at 1080p. The higher frame rates at lower resolutions provide a genuine competitive edge.\n\n### In-Game Video Settings\n\nAlmost universally, pro players prioritize **frame rate over visual quality**:\n\n- Textures: Medium\n- Shadows: Low/Off\n- Anti-Aliasing: Off or FXAA\n- Effects: Low\n- Post-Processing: Off\n\n### Audio Settings\n\nThis is where it gets interesting. Pro audio setups vary wildly:\n\n- **68%** use in-ear monitors (IEMs)\n- **24%** use over-ear headsets\n- **8%** use custom molded earpieces\n- Spatial audio: **OFF** in CS2, **HRTF ON** in Valorant\n\n### Key Takeaway\n\nPro settings are about **consistency and clarity**, not flashy visuals. If you want to compete at the highest level, focus on maximizing frame rate and minimizing input lag.\n\n### The Settings Don't Make the Player\n\nRemember: copying pro settings won't make you a pro. These settings are optimized for players with thousands of hours of muscle memory. Find what works for *you* and stick with it."
+    },
+    {
+      "id": 7,
+      "title": "The Ultimate Monitor Buying Guide 2026",
+      "slug": "ultimate-monitor-buying-guide-2026",
+      "excerpt": "OLED, Mini-LED, or IPS? 4K or 1440p? 240Hz or 360Hz? We break down every factor to help you find your perfect gaming display.",
+      "category": "Hardware",
+      "tags": ["Hardware", "Setup Builds", "Performance"],
+      "authorId": "alex-chen",
+      "author": "Alex Chen",
+      "date": "2026-01-20",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800",
+      "readTime": "11 min",
+      "featured": false,
+      "likes": 389,
+      "content": "## Finding Your Perfect Gaming Monitor\n\nThe monitor market in 2026 is incredibly exciting but also overwhelming. Let me simplify the decision for you.\n\n### Panel Technology Breakdown\n\n| Technology | Response Time | Contrast | HDR | Burn-in Risk | Price |\n|-----------|---------------|----------|-----|-------------|-------|\n| OLED | 0.03ms | ∞:1 | Excellent | Medium | $$$$ |\n| QD-OLED | 0.03ms | ∞:1 | Best | Low | $$$$ |\n| Mini-LED | 2-3ms | 10000:1 | Great | None | $$$ |\n| Fast IPS | 1ms | 1000:1 | Good | None | $$ |\n| VA | 3-5ms | 3000:1 | Good | None | $ |\n\n### Resolution vs Refresh Rate\n\n> Rule of thumb: If you play competitive FPS, prioritize refresh rate. If you play single-player or RPGs, prioritize resolution.\n\n### Recommended Picks\n\n**Best Competitive**: ASUS ROG Swift PG27AQN — 27\" 1440p 360Hz IPS\n**Best All-Round**: Samsung Odyssey OLED G8 — 32\" 4K 240Hz QD-OLED\n**Best Ultrawide**: LG UltraGear 45GS96QB — 45\" WQHD 240Hz OLED\n**Best Budget**: Gigabyte M27Q X — 27\" 1440p 240Hz IPS\n\n### Things Most Reviews Don't Tell You\n\n1. **Pixel density matters** more than raw resolution\n2. **Overdrive settings** can make or break a monitor\n3. **Stand quality** is often overlooked but crucial\n4. **USB-C connectivity** is becoming essential\n\n```\nIdeal Pixel Density:\n- 27\" → 1440p (109 PPI) ✓\n- 32\" → 4K (138 PPI) ✓\n- 27\" → 4K (163 PPI) — overkill for gaming\n- 32\" → 1440p (93 PPI) — too low\n```\n\n### Final Recommendation\n\nFor most gamers in 2026, a **27-32\" 1440p/4K 240Hz QD-OLED** monitor is the sweet spot. You get incredible image quality, fast response times, and HDR support without compromising on refresh rate."
+    },
+    {
+      "id": 8,
+      "title": "How to Improve Your Aim: A Scientific Approach",
+      "slug": "improve-your-aim-scientific-approach",
+      "excerpt": "Using sports science principles and data-driven training methodology to systematically improve your FPS aim and reaction time.",
+      "category": "Guides",
+      "tags": ["Competitive Tips", "Esports", "Performance"],
+      "authorId": "nova-wright",
+      "author": "Nova Wright",
+      "date": "2026-01-15",
+      "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b2b28?w=800",
+      "readTime": "13 min",
+      "featured": false,
+      "likes": 1023,
+      "content": "## The Science of Aiming\n\nAs a former Radiant player and certified sports performance coach, I've developed a training methodology that has helped over 500 players improve their aim by an average of 35%.\n\n### Understanding Aim Mechanics\n\nAim in FPS games can be broken down into three components:\n\n1. **Flick Aim** — fast target acquisition\n2. **Tracking Aim** — following moving targets\n3. **Crosshair Placement** — pre-aiming common angles\n\n### The 30-Minute Daily Routine\n\n```\nWarmup Phase (10 min):\n- Tile Frenzy: 3 min\n- Tracking Spheres: 3 min\n- Micro-adjustments: 4 min\n\nSkill Phase (15 min):\n- 1v1 Aim Duels: 5 min\n- Deathmatch: 10 min\n\nReview Phase (5 min):\n- Record & analyze 3 deaths\n- Identify patterns\n```\n\n> The biggest mistake players make is practicing for hours without structure. 30 focused minutes beats 3 hours of mindless grinding.\n\n### Hardware Optimization\n\nBefore training, ensure your setup isn't holding you back:\n\n| Factor | Recommended |\n|--------|-------------|\n| Mouse Weight | Under 70g |\n| Mousepad Size | 45cm+ width |\n| Monitor | 240Hz+ |\n| Polling Rate | 4000Hz+ |\n| System FPS | 2x monitor Hz |\n\n### Sensitivity Guide\n\nFinding your perfect sensitivity:\n\n1. Start at 800 DPI / 0.35 in-game (Valorant)\n2. Do 180° turn = exactly one mousepad width\n3. Adjust by 0.02 increments\n4. Play 3 deathmatches at each setting\n5. Keep the one with highest headshot %\n\n### Mental Game\n\nAim is 60% mechanical skill and 40% mental:\n\n- **Stay hydrated** — dehydration reduces reaction time by 15%\n- **Sleep** — 7+ hours minimum\n- **Breaks** — 5 min every 45 min of practice\n- **Confidence** — visualize hitting shots before taking them\n\n### Progress Tracking\n\nUse aim trainers with stat tracking. Your metrics should improve weekly:\n\n- Week 1-2: Accuracy baseline\n- Week 3-4: 5-10% improvement\n- Week 5-8: 15-25% improvement\n- Week 9-12: 25-35% improvement (plateau expected)\n\n### Final Words\n\nConsistency beats intensity. Show up every day, do your 30 minutes, and trust the process. Your aim WILL improve."
     }
   ],
   "tournaments": [
@@ -1361,18 +1495,186 @@
     {
       "id": 1,
       "userId": 2,
-      "items": [{ "productId": 1, "quantity": 1, "price": 219.99 }],
-      "total": 219.99,
+      "items": [{ "productId": 1, "quantity": 1, "price": 24999 }],
+      "total": 24999,
       "status": "delivered",
       "date": "2026-02-10"
     },
     {
       "id": 2,
       "userId": 2,
-      "items": [{ "productId": 3, "quantity": 2, "price": 169.99 }],
-      "total": 339.98,
+      "items": [{ "productId": 3, "quantity": 2, "price": 14999 }],
+      "total": 29998,
       "status": "processing",
       "date": "2026-02-18"
+    }
+  ],
+  "communityPlayers": [
+    {
+      "id": "p1",
+      "username": "ShadowStrike",
+      "avatar": "https://ui-avatars.com/api/?name=Shadow+Strike&background=BD00FF&color=fff&bold=true&size=128",
+      "rank": "Diamond",
+      "xp": 14200,
+      "level": 42,
+      "followers": 1284,
+      "following": 312,
+      "bio": "Valorant main | Diamond ranked | Content Creator",
+      "mainGame": "Valorant",
+      "achievements": ["first_win", "ten_wins", "tournament_champion"],
+      "stats": { "wins": 342, "losses": 198, "headshots": 4521, "kd": 1.73 }
+    },
+    {
+      "id": "p2",
+      "username": "NeonPhantom",
+      "avatar": "https://ui-avatars.com/api/?name=Neon+Phantom&background=00E0FF&color=000&bold=true&size=128",
+      "rank": "Immortal",
+      "xp": 28900,
+      "level": 67,
+      "followers": 5420,
+      "following": 189,
+      "bio": "Pro CS2 player | Team NEXUS | Stream daily",
+      "mainGame": "Counter-Strike 2",
+      "achievements": ["first_win", "ten_wins", "hundred_headshots", "tournament_champion", "community_star"],
+      "stats": { "wins": 891, "losses": 302, "headshots": 12840, "kd": 2.14 }
+    },
+    {
+      "id": "p3",
+      "username": "PixelFury",
+      "avatar": "https://ui-avatars.com/api/?name=Pixel+Fury&background=00FF88&color=000&bold=true&size=128",
+      "rank": "Platinum",
+      "xp": 9800,
+      "level": 31,
+      "followers": 724,
+      "following": 445,
+      "bio": "League enthusiast | Support main | GG always",
+      "mainGame": "League of Legends",
+      "achievements": ["first_win", "ten_wins"],
+      "stats": { "wins": 210, "losses": 180, "headshots": 0, "kd": 1.17 }
+    },
+    {
+      "id": "p4",
+      "username": "CyberViper",
+      "avatar": "https://ui-avatars.com/api/?name=Cyber+Viper&background=FF6B35&color=fff&bold=true&size=128",
+      "rank": "Radiant",
+      "xp": 45200,
+      "level": 89,
+      "followers": 12800,
+      "following": 95,
+      "bio": "Top 500 Radiant | Esports Analyst | 🏆x3",
+      "mainGame": "Valorant",
+      "achievements": ["first_win", "ten_wins", "hundred_headshots", "tournament_champion", "community_star"],
+      "stats": { "wins": 1520, "losses": 410, "headshots": 22100, "kd": 2.87 }
+    },
+    {
+      "id": "p5",
+      "username": "ArcticWolf",
+      "avatar": "https://ui-avatars.com/api/?name=Arctic+Wolf&background=4ECDC4&color=000&bold=true&size=128",
+      "rank": "Gold",
+      "xp": 5400,
+      "level": 18,
+      "followers": 312,
+      "following": 580,
+      "bio": "Casual gamer | Love FPS games | New to competitive",
+      "mainGame": "Counter-Strike 2",
+      "achievements": ["first_win"],
+      "stats": { "wins": 89, "losses": 112, "headshots": 890, "kd": 0.94 }
+    },
+    {
+      "id": "p6",
+      "username": "BlazeDemon",
+      "avatar": "https://ui-avatars.com/api/?name=Blaze+Demon&background=E63946&color=fff&bold=true&size=128",
+      "rank": "Ascendant",
+      "xp": 21500,
+      "level": 55,
+      "followers": 3200,
+      "following": 210,
+      "bio": "Full-time streamer | Multi-game pro | Team Captain",
+      "mainGame": "Valorant",
+      "achievements": ["first_win", "ten_wins", "hundred_headshots", "tournament_champion"],
+      "stats": { "wins": 670, "losses": 245, "headshots": 8900, "kd": 2.01 }
+    }
+  ],
+  "communityPosts": [
+    {
+      "id": "post1",
+      "playerId": "p2",
+      "content": "Just hit Immortal rank after 6 months of grinding! The journey was insane 🔥 Never give up on your goals. Next stop: Radiant.",
+      "image": "",
+      "gameTag": "Counter-Strike 2",
+      "likes": 284,
+      "likedBy": ["p1", "p3", "p4"],
+      "comments": [
+        { "id": "c1", "playerId": "p1", "content": "Congrats bro! That's insane 🎉", "timestamp": "2026-02-22T14:30:00" },
+        { "id": "c2", "playerId": "p4", "content": "Welcome to the club! See you in Radiant soon.", "timestamp": "2026-02-22T15:10:00" }
+      ],
+      "timestamp": "2026-02-22T12:00:00"
+    },
+    {
+      "id": "post2",
+      "playerId": "p4",
+      "content": "Tournament prep going hard 💪 Scrimming 8 hours a day. Our team comms are finally clicking. This Major is OURS.",
+      "image": "",
+      "gameTag": "Valorant",
+      "likes": 512,
+      "likedBy": ["p1", "p2", "p3", "p5", "p6"],
+      "comments": [
+        { "id": "c3", "playerId": "p6", "content": "Good luck! You guys are looking scary right now.", "timestamp": "2026-02-21T20:00:00" }
+      ],
+      "timestamp": "2026-02-21T18:00:00"
+    },
+    {
+      "id": "post3",
+      "playerId": "p1",
+      "content": "New setup complete! RTX 5080 + 360Hz monitor. The difference in smoothness is actually insane. Dropped a 40 bomb first game 😤",
+      "image": "",
+      "gameTag": "Valorant",
+      "likes": 198,
+      "likedBy": ["p2", "p3"],
+      "comments": [
+        { "id": "c4", "playerId": "p3", "content": "That setup is cleaaan! How much did it cost?", "timestamp": "2026-02-20T11:00:00" },
+        { "id": "c5", "playerId": "p2", "content": "360Hz gang 🫡", "timestamp": "2026-02-20T12:30:00" }
+      ],
+      "timestamp": "2026-02-20T09:00:00"
+    },
+    {
+      "id": "post4",
+      "playerId": "p3",
+      "content": "Looking for a support duo in League! Currently Plat 2 and climbing. Need someone who can play engage supports. HMU 🎮",
+      "image": "",
+      "gameTag": "League of Legends",
+      "likes": 67,
+      "likedBy": ["p5"],
+      "comments": [],
+      "timestamp": "2026-02-19T16:00:00"
+    },
+    {
+      "id": "post5",
+      "playerId": "p6",
+      "content": "Stream highlight: 1v5 ACE clutch on Ascent with Jett. Chat went absolutely wild. This is why I love this game ❤️‍🔥",
+      "image": "",
+      "gameTag": "Valorant",
+      "likes": 891,
+      "likedBy": ["p1", "p2", "p3", "p4", "p5"],
+      "comments": [
+        { "id": "c6", "playerId": "p4", "content": "Bro that dash reset was UNREAL", "timestamp": "2026-02-18T22:00:00" },
+        { "id": "c7", "playerId": "p1", "content": "Clip of the year contender fr", "timestamp": "2026-02-18T23:00:00" },
+        { "id": "c8", "playerId": "p2", "content": "Need to see the VOD 🔥", "timestamp": "2026-02-19T01:00:00" }
+      ],
+      "timestamp": "2026-02-18T20:00:00"
+    },
+    {
+      "id": "post6",
+      "playerId": "p5",
+      "content": "First competitive match ever and I actually got a positive KD! Baby steps but I'm proud of myself 🥹",
+      "image": "",
+      "gameTag": "Counter-Strike 2",
+      "likes": 156,
+      "likedBy": ["p1", "p2", "p3", "p6"],
+      "comments": [
+        { "id": "c9", "playerId": "p2", "content": "Everyone starts somewhere! Keep grinding 💪", "timestamp": "2026-02-17T15:00:00" }
+      ],
+      "timestamp": "2026-02-17T14:00:00"
     }
   ]
 }

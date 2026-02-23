@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Navbar } from './components';
 import ProtectedRoute from './components/ProtectedRoute';
 import {
@@ -9,18 +11,46 @@ import {
   WishlistPage,
   CheckoutPage,
   BlogPage,
+  BlogDetailsPage,
+  AuthorProfilePage,
   EsportsPage,
   FlashSalePage,
+  CommunityPage,
+  OrderSuccessPage,
+  OrdersPage,
+  OrderDetailsPage,
 } from './pages';
+import BuildRecommender from './components/ai/BuildRecommender';
 import LoginPage from './pages/LoginPage';
 import AdminLayout from './pages/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
 import AdminProductForm from './pages/admin/AdminProductForm';
+import AnalyticsDashboard from './pages/admin/AnalyticsDashboard';
+import SalesAnalytics from './pages/admin/SalesAnalytics';
+import UserAnalytics from './pages/admin/UserAnalytics';
+import RevenueOverview from './pages/admin/RevenueOverview';
 
 function App() {
   return (
     <Router>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="dark"
+        limit={3}
+        toastClassName="!bg-[#0d0d0d]/95 !border !border-white/[0.08] !rounded-xl !shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(0,255,136,0.08)] !font-sans"
+        bodyClassName="!text-white !text-sm !font-medium !p-0"
+        progressClassName="!bg-gradient-to-r !from-[#00FF88] !via-[#00E0FF] !to-[#00FF88]"
+        closeButton={false}
+      />
       <Routes>
         {/* Admin routes — no Navbar, own layout */}
         <Route
@@ -35,6 +65,10 @@ function App() {
           <Route path="products" element={<AdminProducts />} />
           <Route path="add-product" element={<AdminProductForm />} />
           <Route path="edit-product/:category/:id" element={<AdminProductForm />} />
+          <Route path="analytics" element={<AnalyticsDashboard />} />
+          <Route path="analytics/sales" element={<SalesAnalytics />} />
+          <Route path="analytics/users" element={<UserAnalytics />} />
+          <Route path="analytics/revenue" element={<RevenueOverview />} />
         </Route>
 
         {/* Login — no Navbar */}
@@ -54,9 +88,16 @@ function App() {
                 <Route path="/wishlist" element={<WishlistPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogDetailsPage />} />
+                <Route path="/author/:authorId" element={<AuthorProfilePage />} />
                 <Route path="/esports" element={<EsportsPage />} />
                 <Route path="/flash-sale" element={<FlashSalePage />} />
                 <Route path="/deals" element={<FlashSalePage />} />
+                <Route path="/community" element={<CommunityPage />} />
+                <Route path="/ai-build" element={<BuildRecommender />} />
+                <Route path="/order-success" element={<OrderSuccessPage />} />
+                <Route path="/orders" element={<OrdersPage />} />
+                <Route path="/orders/:orderId" element={<OrderDetailsPage />} />
               </Routes>
             </div>
           }

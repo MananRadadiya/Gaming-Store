@@ -135,9 +135,7 @@ export const Hero = () => {
         >
           <span className="text-white drop-shadow-2xl">ENTER THE</span>
           <br />
-          <span className="text-white drop-shadow-2xl">
-            NEXUS
-          </span>
+           <span className="text-transparent bg-clip-text bg-gradient-to-r from-nexus-accent via-white to-nexus-cyan">NEXUS</span>
         </motion.h1>
 
         <motion.p 

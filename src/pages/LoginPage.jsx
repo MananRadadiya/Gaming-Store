@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Mail, Lock, Eye, EyeOff, AlertCircle, Loader2 } from 'lucide-react';
 import { loginUser, clearAuthError } from '../store/authSlice';
+import { showLoginSuccessToast, showLoginErrorToast } from '../utils/toast';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -36,10 +37,17 @@ const LoginPage = () => {
   const fieldErrors = validate();
   const isValid = Object.keys(fieldErrors).length === 0;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setTouched({ email: true, password: true });
-    if (isValid) dispatch(loginUser(form));
+    if (isValid) {
+      const result = await dispatch(loginUser(form));
+      if (loginUser.fulfilled.match(result)) {
+        showLoginSuccessToast(result.payload.user?.name || result.payload.user?.email);
+      } else if (loginUser.rejected.match(result)) {
+        showLoginErrorToast(result.payload);
+      }
+    }
   };
 
   return (

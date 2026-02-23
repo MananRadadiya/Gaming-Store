@@ -153,6 +153,23 @@ export const blogsAPI = {
     const { data } = await apiClient.get('/blogs');
     return { data: Array.isArray(data) ? data : [] };
   },
+  getBySlug: async (slug) => {
+    const { data } = await apiClient.get('/blogs');
+    const posts = Array.isArray(data) ? data : [];
+    return { data: posts.find((p) => p.slug === slug || String(p.id) === slug) };
+  },
+};
+
+export const authorsAPI = {
+  getAll: async () => {
+    const { data } = await apiClient.get('/authors');
+    return { data: Array.isArray(data) ? data : [] };
+  },
+  getById: async (id) => {
+    const { data } = await apiClient.get('/authors');
+    const authors = Array.isArray(data) ? data : [];
+    return { data: authors.find((a) => a.id === id) };
+  },
 };
 
 export const esportsAPI = {

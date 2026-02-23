@@ -12,13 +12,22 @@ import {
   ChevronRight,
   Menu,
   X,
+  BarChart3,
+  TrendingUp,
+  Users,
+  DollarSign,
 } from 'lucide-react';
 import { logout } from '../../store/authSlice';
+import { showLogoutToast } from '../../utils/toast';
 
 const SIDEBAR_LINKS = [
   { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
   { name: 'Products', path: '/admin/products', icon: Package },
   { name: 'Add Product', path: '/admin/add-product', icon: PlusCircle },
+  { name: 'Analytics', path: '/admin/analytics', icon: BarChart3 },
+  { name: 'Revenue', path: '/admin/analytics/revenue', icon: DollarSign },
+  { name: 'Sales', path: '/admin/analytics/sales', icon: TrendingUp },
+  { name: 'Users', path: '/admin/analytics/users', icon: Users },
 ];
 
 const AdminLayout = () => {
@@ -31,6 +40,7 @@ const AdminLayout = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    showLogoutToast();
     navigate('/', { replace: true });
   };
 

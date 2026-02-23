@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { showLogoutToast } from "../utils/toast";
 import {
   Heart,
   ShoppingCart,
@@ -24,6 +25,15 @@ import {
   Mic,
   Camera,
   Flame,
+  Users,
+  MessageSquare,
+  Award,
+  Radio,
+  BookOpen,
+  Newspaper,
+  TrendingUp,
+  Swords,
+  Package,
 } from "lucide-react";
 import {
   motion,
@@ -37,10 +47,40 @@ import { logout } from "../store/authSlice";
 
 /* ---------------- NAV DATA ---------------- */
 const NAV_LINKS = [
-  { name: "Store", path: "/store", hasDropdown: true },
+  { name: "Store", path: "/store", hasDropdown: true, megaType: "store" },
+  { name: "AI Build", path: "/ai-build", icon: <Cpu size={16} /> },
   { name: "Flash Sale", path: "/flash-sale", icon: <Flame size={16} /> },
-  { name: "Esports", path: "/esports", icon: <Trophy size={16} /> },
-  { name: "Blog", path: "/blog", icon: <FileText size={16} /> },
+  { name: "Explore", path: "/community", hasDropdown: true, megaType: "explore", icon: <Users size={16} /> },
+];
+
+const EXPLORE_SECTIONS = [
+  {
+    title: "Community",
+    icon: <Users size={18} />,
+    items: [
+      { name: "Community Hub", icon: <MessageSquare size={15} />, path: "/community", desc: "Connect with gamers" },
+      { name: "Player Profiles", icon: <User size={15} />, path: "/community", desc: "Find & follow players" },
+      { name: "Achievements", icon: <Award size={15} />, path: "/community", desc: "Unlock badges" },
+    ],
+  },
+  {
+    title: "Esports",
+    icon: <Trophy size={18} />,
+    items: [
+      { name: "Tournaments", icon: <Swords size={15} />, path: "/esports", desc: "Compete & win" },
+      { name: "Live Matches", icon: <Radio size={15} />, path: "/esports", desc: "Watch live action" },
+      { name: "Leaderboards", icon: <TrendingUp size={15} />, path: "/esports", desc: "Global rankings" },
+    ],
+  },
+  {
+    title: "Blog",
+    icon: <BookOpen size={18} />,
+    items: [
+      { name: "Latest Articles", icon: <Newspaper size={15} />, path: "/blog", desc: "Gaming news & guides" },
+      { name: "Trending", icon: <TrendingUp size={15} />, path: "/blog", desc: "Popular this week" },
+      { name: "Editorials", icon: <FileText size={15} />, path: "/blog", desc: "Expert opinions" },
+    ],
+  },
 ];
 
 const STORE_CATEGORIES = [
@@ -115,6 +155,7 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    showLogoutToast();
     setUserMenuOpen(false);
     navigate('/');
   };
@@ -219,63 +260,127 @@ export const Navbar = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
                           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[820px] rounded-2xl border border-white/[0.08] shadow-[0_24px_80px_-12px_rgba(0,0,0,0.8)] z-[60]"
+                          className={`absolute top-full mt-4 w-[820px] rounded-2xl border border-white/[0.08] shadow-[0_24px_80px_-12px_rgba(0,0,0,0.8)] z-[60] ${
+                            link.megaType === "explore"
+                              ? "right-0"
+                              : "left-1/2 -translate-x-1/2"
+                          }`}
                           style={{ background: "rgba(10,10,12,0.95)", backdropFilter: "blur(24px) saturate(1.4)" }}
                         >
                           {/* Top accent line */}
                           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00E0FF]/40 to-transparent" />
 
                           <div className="p-7">
-                            <div className="grid grid-cols-3 gap-8">
-                              {STORE_CATEGORIES.map((cat, idx) => (
-                                <div key={idx}>
-                                  <div className="flex items-center gap-2.5 mb-4">
-                                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#00E0FF]/10 to-[#BD00FF]/10 text-[#00E0FF]">
-                                      {cat.icon}
-                                    </span>
-                                    <h3 className="text-[13px] font-bold text-white tracking-wide uppercase">
-                                      {cat.title}
-                                    </h3>
-                                  </div>
-                                  <ul className="space-y-1">
-                                    {cat.items.map((item) => (
-                                      <li key={item.slug}>
-                                        <Link
-                                          to={`/store?category=${encodeURIComponent(item.slug)}`}
-                                          onClick={() => setActiveDropdown(null)}
-                                          className="group flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-neutral-400 hover:text-white hover:bg-white/[0.04] transition-all duration-200"
-                                        >
-                                          <span className="text-neutral-500 group-hover:text-[#00E0FF] transition-colors">
-                                            {item.icon}
-                                          </span>
-                                          {item.name}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
+                            {/* STORE MEGA MENU */}
+                            {link.megaType === "store" && (
+                              <>
+                                <div className="grid grid-cols-3 gap-8">
+                                  {STORE_CATEGORIES.map((cat, idx) => (
+                                    <div key={idx}>
+                                      <div className="flex items-center gap-2.5 mb-4">
+                                        <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#00E0FF]/10 to-[#BD00FF]/10 text-[#00E0FF]">
+                                          {cat.icon}
+                                        </span>
+                                        <h3 className="text-[13px] font-bold text-white tracking-wide uppercase">
+                                          {cat.title}
+                                        </h3>
+                                      </div>
+                                      <ul className="space-y-1">
+                                        {cat.items.map((item) => (
+                                          <li key={item.slug}>
+                                            <Link
+                                              to={`/store?category=${encodeURIComponent(item.slug)}`}
+                                              onClick={() => setActiveDropdown(null)}
+                                              className="group flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-neutral-400 hover:text-white hover:bg-white/[0.04] transition-all duration-200"
+                                            >
+                                              <span className="text-neutral-500 group-hover:text-[#00E0FF] transition-colors">
+                                                {item.icon}
+                                              </span>
+                                              {item.name}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
+                                <div className="mt-6 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+                                  <Link
+                                    to="/store"
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="text-sm font-semibold text-[#00E0FF] hover:text-white transition-colors flex items-center gap-1.5"
+                                  >
+                                    Browse All Products
+                                    <ChevronDown size={14} className="-rotate-90" />
+                                  </Link>
+                                  <Link
+                                    to="/flash-sale"
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00FF88]/10 to-[#00E0FF]/10 border border-[#00FF88]/20 text-[#00FF88] text-sm font-semibold hover:border-[#00FF88]/40 transition-all"
+                                  >
+                                    <Flame size={14} />
+                                    Flash Sale Live
+                                  </Link>
+                                </div>
+                              </>
+                            )}
 
-                            {/* Bottom bar */}
-                            <div className="mt-6 pt-5 border-t border-white/[0.06] flex items-center justify-between">
-                              <Link
-                                to="/store"
-                                onClick={() => setActiveDropdown(null)}
-                                className="text-sm font-semibold text-[#00E0FF] hover:text-white transition-colors flex items-center gap-1.5"
-                              >
-                                Browse All Products
-                                <ChevronDown size={14} className="-rotate-90" />
-                              </Link>
-                              <Link
-                                to="/flash-sale"
-                                onClick={() => setActiveDropdown(null)}
-                                className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00FF88]/10 to-[#00E0FF]/10 border border-[#00FF88]/20 text-[#00FF88] text-sm font-semibold hover:border-[#00FF88]/40 transition-all"
-                              >
-                                <Flame size={14} />
-                                Flash Sale Live
-                              </Link>
-                            </div>
+                            {/* EXPLORE MEGA MENU (Blog, Esports, Community) */}
+                            {link.megaType === "explore" && (
+                              <>
+                                <div className="grid grid-cols-3 gap-8">
+                                  {EXPLORE_SECTIONS.map((section, idx) => (
+                                    <div key={idx}>
+                                      <div className="flex items-center gap-2.5 mb-4">
+                                        <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#BD00FF]/10 to-[#00E0FF]/10 text-[#BD00FF]">
+                                          {section.icon}
+                                        </span>
+                                        <h3 className="text-[13px] font-bold text-white tracking-wide uppercase">
+                                          {section.title}
+                                        </h3>
+                                      </div>
+                                      <ul className="space-y-1">
+                                        {section.items.map((item) => (
+                                          <li key={item.name}>
+                                            <Link
+                                              to={item.path}
+                                              onClick={() => setActiveDropdown(null)}
+                                              className="group flex items-start gap-2.5 px-3 py-2.5 rounded-lg text-sm text-neutral-400 hover:text-white hover:bg-white/[0.04] transition-all duration-200"
+                                            >
+                                              <span className="text-neutral-500 group-hover:text-[#BD00FF] transition-colors mt-0.5">
+                                                {item.icon}
+                                              </span>
+                                              <div>
+                                                <span className="block font-medium">{item.name}</span>
+                                                <span className="block text-[11px] text-neutral-600 mt-0.5">{item.desc}</span>
+                                              </div>
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
+                                <div className="mt-6 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+                                  <Link
+                                    to="/community"
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="text-sm font-semibold text-[#BD00FF] hover:text-white transition-colors flex items-center gap-1.5"
+                                  >
+                                    Open Community Hub
+                                    <ChevronDown size={14} className="-rotate-90" />
+                                  </Link>
+                                  <Link
+                                    to="/esports"
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#BD00FF]/10 to-[#00E0FF]/10 border border-[#BD00FF]/20 text-[#BD00FF] text-sm font-semibold hover:border-[#BD00FF]/40 transition-all"
+                                  >
+                                    <Trophy size={14} />
+                                    Live Tournaments
+                                  </Link>
+                                </div>
+                              </>
+                            )}
                           </div>
                         </motion.div>
                       )}
@@ -286,6 +391,11 @@ export const Navbar = () => {
 
             {/* RIGHT ACTIONS */}
             <div className="flex items-center gap-3">
+              <NavIconBtn
+                icon={<Package size={18} />}
+                link="/orders"
+                label="Orders"
+              />
               <NavIconBtn
                 icon={<Heart size={18} />}
                 link="/wishlist"
@@ -437,7 +547,7 @@ export const Navbar = () => {
                             transition={{ duration: 0.2 }}
                             className="mt-2 ml-4 space-y-2"
                           >
-                            {STORE_CATEGORIES.map((cat) => (
+                            {link.megaType === "store" && STORE_CATEGORIES.map((cat) => (
                               <div key={cat.title}>
                                 <h4 className="text-xs font-bold text-cyan-400 uppercase px-2 py-1">
                                   {cat.title}
@@ -456,7 +566,31 @@ export const Navbar = () => {
                                   ))}
                                 </div>
                               </div>
-                            ))}                          </motion.div>
+                            ))}
+                            {link.megaType === "explore" && EXPLORE_SECTIONS.map((section) => (
+                              <div key={section.title}>
+                                <h4 className="text-xs font-bold text-purple-400 uppercase px-2 py-1">
+                                  {section.title}
+                                </h4>
+                                <div className="space-y-1">
+                                  {section.items.map((item) => (
+                                    <Link
+                                      key={item.name}
+                                      to={item.path}
+                                      onClick={() => setIsMobileOpen(false)}
+                                      className="flex items-center gap-2.5 p-2 pl-6 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                                    >
+                                      <span className="text-neutral-500">{item.icon}</span>
+                                      <div>
+                                        <span className="block">{item.name}</span>
+                                        <span className="block text-[10px] text-neutral-600">{item.desc}</span>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </motion.div>
                         )}
                     </AnimatePresence>
                   </div>

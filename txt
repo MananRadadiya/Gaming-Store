@@ -35,3 +35,6 @@ git commit -m "class/home"
 git branch -M main
 git remote add origin https://github.com/MananRadadiya/Gaming-Store.git
 git push -u origin main
+
+Convert this keyboard product image into a premium, uniform e-commerce product shot for a dark cyberpunk gaming store. Remove the original background completely. Place the keyboard on a pure dark charcoal/black background (#0B0F14). Center the keyboard perfectly with equal padding on all sides. Ensure consistent perspective (top-down slight angle, realistic). Add soft studio lighting from top-left. Add subtle soft shadow directly under the keyboard. Add faint RGB ambient glow reflecting slightly onto the surface. Enhance RGB lighting so it looks vibrant but not oversaturated. Improve clarity and sharpness. Make lighting consistent and realistic. Do NOT exaggerate glow. Do NOT distort proportions. Keep it realistic and production-ready. Output as high-resolution 4K clean product image. Background must be consistent across all products.
+Use a fixed 1:1 square ratio at 2000×2000px (or 3000×3000px for 4K-grade assets) with the product centered and scaled to ~75–80% of canvas width for perfect grid alignment.
