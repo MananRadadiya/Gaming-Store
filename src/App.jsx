@@ -21,6 +21,7 @@ import {
   OrderDetailsPage,
 } from './pages';
 import BuildRecommender from './components/ai/BuildRecommender';
+import NexusBot from './components/ai/NexusBot';
 import LoginPage from './pages/LoginPage';
 import VirtualStore from './pages/VirtualStore';
 import AdminLayout from './pages/admin/AdminLayout';
@@ -52,6 +53,7 @@ function App() {
         progressClassName="!bg-gradient-to-r !from-[#00FF88] !via-[#00E0FF] !to-[#00FF88]"
         closeButton={false}
       />
+      <NexusBot />
       <Routes>
         {/* Admin routes — no Navbar, own layout */}
         <Route

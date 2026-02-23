@@ -212,7 +212,7 @@ const BuildRecommender = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505]">
+    <div className="min-h-screen bg-[#050505] text-white pt-24">
       {/* ───── AI Loading Overlay ───── */}
       <AnimatePresence>
         {isGenerating && <LoadingOverlay progress={loadingProgress} />}

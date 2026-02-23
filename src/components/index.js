@@ -17,6 +17,7 @@ export { default as BuiltForChampions } from './BuiltForChampions';
 export { default as Newsletter } from './Newsletter';
 export { default as Category3D } from './Three/Category3D';
 export { default as FilterSidebar } from './FilterSidebar';
+export { default as HeroAntiGravity } from './HeroAntiGravity';
 
 
 

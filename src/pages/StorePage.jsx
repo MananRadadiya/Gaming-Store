@@ -329,9 +329,24 @@ const StorePage = () => {
           {/* Product grid */}
           <div>
             {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
                 {[...Array(9)].map((_, i) => (
-                  <div key={i} className="aspect-[3/4] rounded-2xl bg-white/[0.02] border border-white/[0.04] animate-pulse" />
+                  <div key={i} className="rounded-xl bg-[#0a0a0c] border border-white/[0.04] overflow-hidden">
+                    <div className="aspect-[4/3] bg-white/[0.02] animate-pulse" />
+                    <div className="p-4 space-y-3">
+                      <div className="flex justify-between">
+                        <div className="h-2 w-12 bg-white/[0.03] rounded animate-pulse" />
+                        <div className="h-2 w-16 bg-white/[0.03] rounded animate-pulse" />
+                      </div>
+                      <div className="h-3 w-3/4 bg-white/[0.04] rounded animate-pulse" />
+                      <div className="h-3 w-1/2 bg-white/[0.03] rounded animate-pulse" />
+                      <div className="h-[3px] w-full bg-white/[0.03] rounded-full animate-pulse" />
+                      <div className="flex justify-between items-end pt-1">
+                        <div className="h-5 w-20 bg-white/[0.04] rounded animate-pulse" />
+                        <div className="h-8 w-16 bg-white/[0.03] rounded-lg animate-pulse" />
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : error ? (
@@ -378,17 +393,18 @@ const StorePage = () => {
             ) : (
               <motion.div
                 layout
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5"
+                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5"
               >
                 <AnimatePresence mode="popLayout">
-                  {filtered.map((product) => (
+                  {filtered.map((product, idx) => (
                     <motion.div
                       key={product.id}
                       layout
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.25 }}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.97 }}
+                      transition={{ duration: 0.3, delay: Math.min(idx * 0.03, 0.3) }}
+                      className="h-full"
                     >
                       <ProductCard product={product} />
                     </motion.div>

@@ -12,6 +12,8 @@ import {
   showLogoutToast,
 } from '../utils/toast';
 
+export { default as useMousePosition } from './useMousePosition';
+
 export const useCart = () => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.cart.items);

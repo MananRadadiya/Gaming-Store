@@ -14,13 +14,14 @@ import {
   VisualHighlight,
   BuiltForChampions,
   Newsletter,
+  HeroAntiGravity,
 } from '../components';
 
 const HomePage = () => {
   return (
     <div className="bg-[#050505] min-h-screen text-white">
       {/* ── Hero ── */}
-      <Hero />
+      <HeroAntiGravity />
 
       {/* ── Categories ── */}
       <CategoriesSection />

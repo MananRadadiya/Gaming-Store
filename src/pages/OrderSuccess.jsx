@@ -53,7 +53,7 @@ const OrderSuccessPage = () => {
 
   if (!currentOrder) {
     return (
-      <div className="bg-[#0B0F14] min-h-screen text-white flex items-center justify-center">
+      <div className="bg-[#0B0F14] min-h-screen text-white pt-24 flex items-center justify-center">
         <p className="text-white/50">No order found. Redirecting to store…</p>
       </div>
     );
