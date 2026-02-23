@@ -34,6 +34,7 @@ import {
   TrendingUp,
   Swords,
   Package,
+  Box,
 } from "lucide-react";
 import {
   motion,
@@ -48,6 +49,7 @@ import { logout } from "../store/authSlice";
 /* ---------------- NAV DATA ---------------- */
 const NAV_LINKS = [
   { name: "Store", path: "/store", hasDropdown: true, megaType: "store" },
+  { name: "3D Store", path: "/virtual-store", icon: <Box size={16} /> },
   { name: "AI Build", path: "/ai-build", icon: <Cpu size={16} /> },
   { name: "Flash Sale", path: "/flash-sale", icon: <Flame size={16} /> },
   { name: "Explore", path: "/community", hasDropdown: true, megaType: "explore", icon: <Users size={16} /> },

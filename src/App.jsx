@@ -22,6 +22,7 @@ import {
 } from './pages';
 import BuildRecommender from './components/ai/BuildRecommender';
 import LoginPage from './pages/LoginPage';
+import VirtualStore from './pages/VirtualStore';
 import AdminLayout from './pages/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
@@ -73,6 +74,9 @@ function App() {
 
         {/* Login — no Navbar */}
         <Route path="/login" element={<LoginPage />} />
+
+        {/* Virtual 3D Store — standalone immersive, no Navbar */}
+        <Route path="/virtual-store" element={<VirtualStore />} />
 
         {/* Public routes — with Navbar */}
         <Route

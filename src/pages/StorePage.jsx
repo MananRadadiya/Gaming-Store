@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SlidersHorizontal, ChevronDown, Search, Package, X } from 'lucide-react';
+import { SlidersHorizontal, ChevronDown, Search, Package, X, Box } from 'lucide-react';
 import { ProductCard, Footer } from '../components';
 import FilterSidebar from '../components/FilterSidebar';
 import { useDispatch, useSelector } from 'react-redux';
@@ -199,6 +199,22 @@ const StorePage = () => {
           <p className="text-white/30 text-base">
             {filtered.length} product{filtered.length !== 1 ? 's' : ''} available
           </p>
+
+          {/* Enter Virtual 3D Store */}
+          <Link
+            to="/virtual-store"
+            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold
+                       bg-gradient-to-r from-cyan-500/10 to-purple-500/10
+                       border border-cyan-500/30 text-cyan-400
+                       hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,224,255,0.15)]
+                       transition-all duration-300 group"
+          >
+            <Box size={18} className="group-hover:rotate-12 transition-transform" />
+            Enter 3D Virtual Store
+            <span className="ml-1 px-1.5 py-0.5 text-[10px] uppercase tracking-widest rounded bg-cyan-500/20 text-cyan-300">
+              New
+            </span>
+          </Link>
         </motion.div>
 
         {/* Toolbar */}
