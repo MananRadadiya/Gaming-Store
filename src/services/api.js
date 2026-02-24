@@ -1,14 +1,7 @@
 import axios from 'axios';
 
-// ─── Environment ────────────────────────────────────────────────────
-const IS_DEV = import.meta.env?.DEV === true;
-const API_BASE_URL = import.meta.env?.VITE_API_URL || 'http://localhost:3001';
-
-// ─── Axios client (used in dev for json-server) ─────────────────────
-export const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  timeout: 15000,
-});
+// ─── Axios client ────────────────────────────────────────────────────
+export const apiClient = axios.create({ timeout: 15000 });
 
 // ─── Constants ──────────────────────────────────────────────────────
 const CATEGORY_KEYS = [
@@ -100,42 +93,18 @@ const getDbData = () => {
   return _dbPromise;
 };
 
-// ─── Data fetchers (env-aware) ──────────────────────────────────────
+// ─── Data fetchers (always from /db.json) ───────────────────────────
 
 const fetchAllProducts = async () => {
+  const db = await getDbData();
   const products = [];
 
-  if (IS_DEV) {
-    const responses = await Promise.all(
-      CATEGORY_KEYS.map((key) =>
-        apiClient
-          .get(`/${key}`)
-          .then((r) => ({ key, data: r.data }))
-          .catch((err) => {
-            console.error(`[API] Failed to load /${key}:`, err?.message || err);
-            return { key, data: [] };
-          })
-      )
-    );
-
-    for (const res of responses) {
-      if (!Array.isArray(res.data)) continue;
-      for (const item of res.data) {
-        const p = toUnifiedProduct(item, res.key);
-        if (p) products.push(p);
-      }
-    }
-
-    console.log('[API] fetchAllProducts ->', products.length, 'items');
-  } else {
-    const db = await getDbData();
-    for (const key of CATEGORY_KEYS) {
-      const items = db[key];
-      if (!Array.isArray(items)) continue;
-      for (const item of items) {
-        const p = toUnifiedProduct(item, key);
-        if (p) products.push(p);
-      }
+  for (const key of CATEGORY_KEYS) {
+    const items = db[key];
+    if (!Array.isArray(items)) continue;
+    for (const item of items) {
+      const p = toUnifiedProduct(item, key);
+      if (p) products.push(p);
     }
   }
 
@@ -143,10 +112,6 @@ const fetchAllProducts = async () => {
 };
 
 const fetchCollection = async (collectionKey) => {
-  if (IS_DEV) {
-    const { data } = await apiClient.get(`/${collectionKey}`);
-    return Array.isArray(data) ? data : [];
-  }
   const db = await getDbData();
   const data = db[collectionKey];
   return Array.isArray(data) ? data : [];
