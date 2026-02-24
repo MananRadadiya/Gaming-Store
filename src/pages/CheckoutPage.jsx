@@ -45,13 +45,13 @@ const CheckoutPage = () => {
   const errorRef = useRef(null);
 
   const [customer, setCustomer] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    pinCode: '',
+    firstName: 'Manan',
+    lastName: 'Radadiya',
+    email: 'manan.radadiya@gmail.com',
+    phone: '9876543210',
+    address: '42 Cyber Lane, Electronic City',
+    city: 'Bengaluru',
+    pinCode: '560100',
   });
 
   const { subtotal, tax, shipping, discountAmount, total } = calculateCartTotal(items, couponDiscount);

@@ -2,10 +2,11 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { Check, Package, ArrowRight, ShoppingBag, Copy, PartyPopper } from 'lucide-react';
+import { Check, Package, ArrowRight, ShoppingBag, Copy, PartyPopper, MessageCircle } from 'lucide-react';
 import { Footer } from '../components';
 import { formatPrice } from '../utils/helpers';
 import { getEstimatedDelivery } from '../services/orderService';
+import { openWhatsAppInvoice } from '../utils/whatsappInvoice';
 
 /* ── tiny confetti ─────────────────────────────────────── */
 const ConfettiPiece = ({ delay }) => {
@@ -246,6 +247,22 @@ const OrderSuccessPage = () => {
             Continue Shopping
             <ArrowRight size={16} />
           </Link>
+        </motion.div>
+
+        {/* WhatsApp invoice share */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.15 }}
+          className="mt-4"
+        >
+          <button
+            onClick={() => openWhatsAppInvoice(currentOrder, currentOrder.customer?.phone)}
+            className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-[#25D366]/15 border border-[#25D366]/30 hover:bg-[#25D366]/25 hover:border-[#25D366]/50 hover:shadow-[0_0_30px_rgba(37,211,102,0.15)] transition-all"
+          >
+            <MessageCircle size={18} className="text-[#25D366]" />
+            Share Invoice on WhatsApp
+          </button>
         </motion.div>
       </div>
 
