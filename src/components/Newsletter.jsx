@@ -30,8 +30,8 @@ const Newsletter = () => {
           transition={{ duration: 0.7 }}
           className="max-w-2xl mx-auto"
         >
-          {/* Glassmorphism Card */}
-          <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.06] p-10 sm:p-14 text-center backdrop-blur-xl overflow-hidden">
+          {/* Glassmorphism Card — PERF: removed backdrop-blur-xl */}
+          <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.06] p-10 sm:p-14 text-center overflow-hidden">
             {/* Inner glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-60 h-40 bg-[#00FF88]/[0.06] rounded-full blur-[80px] pointer-events-none" />
 
@@ -124,4 +124,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default React.memo(Newsletter);

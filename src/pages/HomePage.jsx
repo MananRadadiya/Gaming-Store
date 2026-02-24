@@ -1,54 +1,74 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import {
-  Hero,
-  Footer,
-  WhyChooseNexus,
-  StatsSection,
-  TestimonialsSection,
-  CategoriesSection,
-  FlashSaleSection,
-  FeaturedShowcase,
-  VisualHighlight,
-  BuiltForChampions,
-  Newsletter,
-  HeroAntiGravity,
-} from '../components';
+import { Footer } from '../components';
+import HeroAntiGravity from '../components/HeroAntiGravity';
+
+/* ── PERF: Lazy-load all below-the-fold sections ──
+   These components are not visible on initial viewport.
+   Dynamic imports split them into separate chunks so the
+   browser only downloads them when needed, drastically
+   reducing initial JS parse/eval time. */
+const CategoriesSection = lazy(() => import('../components/CategoriesSection'));
+const FeaturedShowcase = lazy(() => import('../components/FeaturedShowcase'));
+const StatsSection = lazy(() => import('../components/StatsSection'));
+const VisualHighlight = lazy(() => import('../components/VisualHighlight'));
+const WhyChooseNexus = lazy(() => import('../components/WhyChooseNexus'));
+const TestimonialsSection = lazy(() => import('../components/TestimonialsSection'));
+const BuiltForChampions = lazy(() => import('../components/BuiltForChampions'));
+const FlashSaleSection = lazy(() => import('../components/FlashSaleSection'));
+const Newsletter = lazy(() => import('../components/Newsletter'));
+
+/* PERF: Lightweight suspense fallback — no layout shift, matches bg */
+const SectionFallback = () => (
+  <div className="w-full py-24 flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-[#00FF88]/30 border-t-[#00FF88] rounded-full animate-spin" />
+  </div>
+);
 
 const HomePage = () => {
   return (
     <div className="bg-[#050505] min-h-screen text-white">
-      {/* ── Hero ── */}
+      {/* ── Hero — loaded eagerly (above the fold) ── */}
       <HeroAntiGravity />
 
-      {/* ── Categories ── */}
-      <CategoriesSection />
+      {/* ── All below-fold sections wrapped in Suspense ── */}
+      <Suspense fallback={<SectionFallback />}>
+        <CategoriesSection />
+      </Suspense>
 
-      {/* ── Featured Product Showcase (horizontal scroll) ── */}
-      <FeaturedShowcase />
+      <Suspense fallback={<SectionFallback />}>
+        <FeaturedShowcase />
+      </Suspense>
 
-      {/* ── Stats / Social Proof ── */}
-      <StatsSection />
+      <Suspense fallback={<SectionFallback />}>
+        <StatsSection />
+      </Suspense>
 
-      {/* ── Visual Highlight (parallax split section) ── */}
-      <VisualHighlight />
+      <Suspense fallback={<SectionFallback />}>
+        <VisualHighlight />
+      </Suspense>
 
-      {/* ── Why Choose NEXUS ── */}
-      <WhyChooseNexus />
+      <Suspense fallback={<SectionFallback />}>
+        <WhyChooseNexus />
+      </Suspense>
 
-      {/* ── Testimonials ── */}
-      <TestimonialsSection />
+      <Suspense fallback={<SectionFallback />}>
+        <TestimonialsSection />
+      </Suspense>
 
-      {/* ── Built For Champions ── */}
-      <BuiltForChampions />
+      <Suspense fallback={<SectionFallback />}>
+        <BuiltForChampions />
+      </Suspense>
 
-      {/* ── Flash Sale CTA ── */}
-      <FlashSaleSection />
+      <Suspense fallback={<SectionFallback />}>
+        <FlashSaleSection />
+      </Suspense>
 
-      {/* ── Newsletter ── */}
-      <Newsletter />
+      <Suspense fallback={<SectionFallback />}>
+        <Newsletter />
+      </Suspense>
 
       {/* ── Final CTA ── */}
       <section className="relative py-28">

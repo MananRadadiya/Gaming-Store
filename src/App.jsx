@@ -3,35 +3,45 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Navbar } from './components';
 import ProtectedRoute from './components/ProtectedRoute';
-import {
-  HomePage,
-  StorePage,
-  ProductPage,
-  CartPage,
-  WishlistPage,
-  CheckoutPage,
-  BlogPage,
-  BlogDetailsPage,
-  AuthorProfilePage,
-  EsportsPage,
-  FlashSalePage,
-  CommunityPage,
-  OrderSuccessPage,
-  OrdersPage,
-  OrderDetailsPage,
-} from './pages';
-import BuildRecommender from './components/ai/BuildRecommender';
-import NexusBot from './components/ai/NexusBot';
-import LoginPage from './pages/LoginPage';
-import VirtualStore from './pages/VirtualStore';
-import AdminLayout from './pages/admin/AdminLayout';
-import AdminDashboard from './pages/admin/AdminDashboard';
-import AdminProducts from './pages/admin/AdminProducts';
-import AdminProductForm from './pages/admin/AdminProductForm';
-import AnalyticsDashboard from './pages/admin/AnalyticsDashboard';
-import SalesAnalytics from './pages/admin/SalesAnalytics';
-import UserAnalytics from './pages/admin/UserAnalytics';
-import RevenueOverview from './pages/admin/RevenueOverview';
+import React, { Suspense, lazy } from 'react';
+
+/* PERF: Lazy-load all page routes.
+   Only HomePage JS is eagerly loaded via the import chain.
+   All other routes load on demand when user navigates. */
+const HomePage = lazy(() => import('./pages/HomePage'));
+const StorePage = lazy(() => import('./pages/StorePage'));
+const ProductPage = lazy(() => import('./pages/ProductPage'));
+const CartPage = lazy(() => import('./pages/CartPage'));
+const WishlistPage = lazy(() => import('./pages/WishlistPage'));
+const CheckoutPage = lazy(() => import('./pages/CheckoutPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogDetailsPage = lazy(() => import('./pages/BlogDetails'));
+const AuthorProfilePage = lazy(() => import('./pages/AuthorProfile'));
+const EsportsPage = lazy(() => import('./pages/EsportsPage'));
+const FlashSalePage = lazy(() => import('./pages/FlashSalePage'));
+const CommunityPage = lazy(() => import('./pages/CommunityPage'));
+const OrderSuccessPage = lazy(() => import('./pages/OrderSuccess'));
+const OrdersPage = lazy(() => import('./pages/OrdersPage'));
+const OrderDetailsPage = lazy(() => import('./pages/OrderDetails'));
+const BuildRecommender = lazy(() => import('./components/ai/BuildRecommender'));
+const NexusBot = lazy(() => import('./components/ai/NexusBot'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const VirtualStore = lazy(() => import('./pages/VirtualStore'));
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const AdminProducts = lazy(() => import('./pages/admin/AdminProducts'));
+const AdminProductForm = lazy(() => import('./pages/admin/AdminProductForm'));
+const AnalyticsDashboard = lazy(() => import('./pages/admin/AnalyticsDashboard'));
+const SalesAnalytics = lazy(() => import('./pages/admin/SalesAnalytics'));
+const UserAnalytics = lazy(() => import('./pages/admin/UserAnalytics'));
+const RevenueOverview = lazy(() => import('./pages/admin/RevenueOverview'));
+
+/* PERF: Minimal page-level loading fallback */
+const PageLoader = () => (
+  <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-[#00FF88]/20 border-t-[#00FF88] rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   return (
@@ -53,32 +63,37 @@ function App() {
         progressClassName="!bg-gradient-to-r !from-[#00FF88] !via-[#00E0FF] !to-[#00FF88]"
         closeButton={false}
       />
-      <NexusBot />
+      {/* PERF: NexusBot lazy-loaded — AI chat is not needed on initial render */}
+      <Suspense fallback={null}>
+        <NexusBot />
+      </Suspense>
       <Routes>
         {/* Admin routes — no Navbar, own layout */}
         <Route
           path="/admin"
           element={
             <ProtectedRoute requireAdmin>
-              <AdminLayout />
+              <Suspense fallback={<PageLoader />}>
+                <AdminLayout />
+              </Suspense>
             </ProtectedRoute>
           }
         >
-          <Route index element={<AdminDashboard />} />
-          <Route path="products" element={<AdminProducts />} />
-          <Route path="add-product" element={<AdminProductForm />} />
-          <Route path="edit-product/:category/:id" element={<AdminProductForm />} />
-          <Route path="analytics" element={<AnalyticsDashboard />} />
-          <Route path="analytics/sales" element={<SalesAnalytics />} />
-          <Route path="analytics/users" element={<UserAnalytics />} />
-          <Route path="analytics/revenue" element={<RevenueOverview />} />
+          <Route index element={<Suspense fallback={<PageLoader />}><AdminDashboard /></Suspense>} />
+          <Route path="products" element={<Suspense fallback={<PageLoader />}><AdminProducts /></Suspense>} />
+          <Route path="add-product" element={<Suspense fallback={<PageLoader />}><AdminProductForm /></Suspense>} />
+          <Route path="edit-product/:category/:id" element={<Suspense fallback={<PageLoader />}><AdminProductForm /></Suspense>} />
+          <Route path="analytics" element={<Suspense fallback={<PageLoader />}><AnalyticsDashboard /></Suspense>} />
+          <Route path="analytics/sales" element={<Suspense fallback={<PageLoader />}><SalesAnalytics /></Suspense>} />
+          <Route path="analytics/users" element={<Suspense fallback={<PageLoader />}><UserAnalytics /></Suspense>} />
+          <Route path="analytics/revenue" element={<Suspense fallback={<PageLoader />}><RevenueOverview /></Suspense>} />
         </Route>
 
-        {/* Login — no Navbar */}
-        <Route path="/login" element={<LoginPage />} />
+        {/* Login — standalone, no Navbar */}
+        <Route path="/login" element={<Suspense fallback={<PageLoader />}><LoginPage /></Suspense>} />
 
         {/* Virtual 3D Store — standalone immersive, no Navbar */}
-        <Route path="/virtual-store" element={<VirtualStore />} />
+        <Route path="/virtual-store" element={<Suspense fallback={<PageLoader />}><VirtualStore /></Suspense>} />
 
         {/* Public routes — with Navbar */}
         <Route
@@ -87,23 +102,23 @@ function App() {
             <div className="bg-nexus-darker min-h-screen text-white">
               <Navbar />
               <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/store" element={<StorePage />} />
-                <Route path="/product/:id" element={<ProductPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/wishlist" element={<WishlistPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:slug" element={<BlogDetailsPage />} />
-                <Route path="/author/:authorId" element={<AuthorProfilePage />} />
-                <Route path="/esports" element={<EsportsPage />} />
-                <Route path="/flash-sale" element={<FlashSalePage />} />
-                <Route path="/deals" element={<FlashSalePage />} />
-                <Route path="/community" element={<CommunityPage />} />
-                <Route path="/ai-build" element={<BuildRecommender />} />
-                <Route path="/order-success" element={<OrderSuccessPage />} />
-                <Route path="/orders" element={<OrdersPage />} />
-                <Route path="/orders/:orderId" element={<OrderDetailsPage />} />
+                <Route path="/" element={<Suspense fallback={<PageLoader />}><HomePage /></Suspense>} />
+                <Route path="/store" element={<Suspense fallback={<PageLoader />}><StorePage /></Suspense>} />
+                <Route path="/product/:id" element={<Suspense fallback={<PageLoader />}><ProductPage /></Suspense>} />
+                <Route path="/cart" element={<Suspense fallback={<PageLoader />}><CartPage /></Suspense>} />
+                <Route path="/wishlist" element={<Suspense fallback={<PageLoader />}><WishlistPage /></Suspense>} />
+                <Route path="/checkout" element={<Suspense fallback={<PageLoader />}><CheckoutPage /></Suspense>} />
+                <Route path="/blog" element={<Suspense fallback={<PageLoader />}><BlogPage /></Suspense>} />
+                <Route path="/blog/:slug" element={<Suspense fallback={<PageLoader />}><BlogDetailsPage /></Suspense>} />
+                <Route path="/author/:authorId" element={<Suspense fallback={<PageLoader />}><AuthorProfilePage /></Suspense>} />
+                <Route path="/esports" element={<Suspense fallback={<PageLoader />}><EsportsPage /></Suspense>} />
+                <Route path="/flash-sale" element={<Suspense fallback={<PageLoader />}><FlashSalePage /></Suspense>} />
+                <Route path="/deals" element={<Suspense fallback={<PageLoader />}><FlashSalePage /></Suspense>} />
+                <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />
+                <Route path="/ai-build" element={<Suspense fallback={<PageLoader />}><BuildRecommender /></Suspense>} />
+                <Route path="/order-success" element={<Suspense fallback={<PageLoader />}><OrderSuccessPage /></Suspense>} />
+                <Route path="/orders" element={<Suspense fallback={<PageLoader />}><OrdersPage /></Suspense>} />
+                <Route path="/orders/:orderId" element={<Suspense fallback={<PageLoader />}><OrderDetailsPage /></Suspense>} />
               </Routes>
             </div>
           }

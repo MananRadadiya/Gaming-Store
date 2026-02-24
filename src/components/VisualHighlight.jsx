@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Shield, Cpu, Wifi } from 'lucide-react';
 
@@ -21,6 +21,15 @@ const VisualHighlight = () => {
   const rotate = useTransform(scrollYProgress, [0, 1], [-3, 3]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.92, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  /* PERF: Moved useTransform out of JSX — hooks cannot be called inline */
+  const y3 = useTransform(scrollYProgress, [0, 1], [30, -50]);
+
+  /* PERF: Reduced floating particles from 5 to 3 and memoize config */
+  const particleConfigs = useMemo(() => [
+    { delay: 0, left: '20%', top: '30%', duration: 3 },
+    { delay: 1, left: '50%', top: '50%', duration: 4 },
+    { delay: 2, left: '80%', top: '70%', duration: 5 },
+  ], []);
 
   return (
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
@@ -64,8 +73,8 @@ const VisualHighlight = () => {
                 </div>
               </div>
 
-              {/* Floating decorative particles */}
-              {[...Array(5)].map((_, i) => (
+              {/* Floating decorative particles — PERF: reduced from 5 to 3 */}
+              {particleConfigs.map((cfg, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-1.5 h-1.5 rounded-full bg-[#00FF88]/40"
@@ -74,13 +83,13 @@ const VisualHighlight = () => {
                     opacity: [0.2, 0.8, 0.2],
                   }}
                   transition={{
-                    duration: 3 + i,
+                    duration: cfg.duration,
                     repeat: Infinity,
-                    delay: i * 0.5,
+                    delay: cfg.delay,
                   }}
                   style={{
-                    left: `${20 + i * 15}%`,
-                    top: `${30 + (i % 3) * 20}%`,
+                    left: cfg.left,
+                    top: cfg.top,
                   }}
                 />
               ))}
@@ -89,7 +98,7 @@ const VisualHighlight = () => {
             {/* Floating spec badges */}
             <motion.div
               style={{ y: y2 }}
-              className="absolute -right-4 top-12 px-4 py-3 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] shadow-xl"
+              className="absolute -right-4 top-12 px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] shadow-xl"
             >
               <div className="flex items-center gap-2">
                 <Zap size={14} className="text-[#00FF88]" />
@@ -98,8 +107,8 @@ const VisualHighlight = () => {
             </motion.div>
 
             <motion.div
-              style={{ y: useTransform(scrollYProgress, [0, 1], [30, -50]) }}
-              className="absolute -left-4 bottom-20 px-4 py-3 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] shadow-xl"
+              style={{ y: y3 }}
+              className="absolute -left-4 bottom-20 px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] shadow-xl"
             >
               <div className="flex items-center gap-2">
                 <Shield size={14} className="text-[#00E0FF]" />
@@ -156,4 +165,5 @@ const VisualHighlight = () => {
   );
 };
 
-export default VisualHighlight;
+/* PERF: React.memo — static parallax content */
+export default React.memo(VisualHighlight);

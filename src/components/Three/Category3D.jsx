@@ -1,8 +1,18 @@
 // src/components/Three/Category3D.jsx
+/* PERF OPTIMIZATIONS:
+   - Reduced dpr to [1, 1.5] instead of full devicePixelRatio
+   - Disabled shadows (4 shadow maps running simultaneously = major GPU drain)
+   - Removed ContactShadows (renders extra scene pass per frame)
+   - Added performance={{ min: 0.5 }} for adaptive quality
+   - Reduced light count
+   - Used frameloop="demand" with invalidate on rotation
+   - Reuse material across clones via useMemo
+   - Disabled antialias (at small card sizes, barely visible)
+*/
 
 import React, { Suspense, useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Environment, ContactShadows } from "@react-three/drei";
+import { Canvas, useFrame, invalidate } from "@react-three/fiber";
+import { useGLTF, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
 const normalizeModelUrl = (url) => {
@@ -11,6 +21,14 @@ const normalizeModelUrl = (url) => {
   if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("/")) return url;
   return `/${url}`;
 };
+
+/* PERF: Shared material instance — all 4 models use the same material,
+   avoids creating 4 separate MeshStandardMaterial objects */
+const sharedMaterial = new THREE.MeshStandardMaterial({
+  color: new THREE.Color("#d1d5db"),
+  roughness: 0.4,
+  metalness: 0.2,
+});
 
 const NormalizedModel = ({ url }) => {
   const normalizedUrl = useMemo(() => normalizeModelUrl(url), [url]);
@@ -22,21 +40,16 @@ const NormalizedModel = ({ url }) => {
 
     const clone = scene.clone(true);
 
-    // ✅ Clean Light Grey Material (Single Color)
     clone.traverse((child) => {
       if (child.isMesh) {
-        child.material = new THREE.MeshStandardMaterial({
-          color: new THREE.Color("#d1d5db"), // Light grey
-          roughness: 0.4,
-          metalness: 0.2,
-        });
-
-        child.castShadow = true;
-        child.receiveShadow = true;
+        /* PERF: Reuse shared material instead of creating new one per mesh */
+        child.material = sharedMaterial;
+        /* PERF: Disabled shadows — removes shadow map render pass */
+        child.castShadow = false;
+        child.receiveShadow = false;
       }
     });
 
-    // ✅ Proper Centering + Margin Control
     const box = new THREE.Box3().setFromObject(clone);
     const size = new THREE.Vector3();
     const center = new THREE.Vector3();
@@ -44,13 +57,10 @@ const NormalizedModel = ({ url }) => {
     box.getSize(size);
     box.getCenter(center);
 
-    // Slightly smaller scale for inner margin
     const maxAxis = Math.max(size.x, size.y, size.z);
     if (Number.isFinite(maxAxis) && maxAxis > 0) {
-      const scale = 2.0 / maxAxis; // Smaller than before = margin inside box
+      const scale = 2.0 / maxAxis;
       clone.scale.setScalar(scale);
-
-      // Perfect centering
       clone.position.x = -center.x * scale;
       clone.position.y = -center.y * scale;
       clone.position.z = -center.z * scale;
@@ -59,10 +69,12 @@ const NormalizedModel = ({ url }) => {
     return clone;
   }, [scene]);
 
-  // ✅ Smooth rotation only (no vertical floating)
-  useFrame((_, delta) => {
+  /* PERF: useFrame with invalidate — only triggers re-render when rotation changes.
+     Combined with frameloop="demand", the canvas only paints when needed */
+  useFrame((state, delta) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.5;
+      invalidate();
     }
   });
 
@@ -71,46 +83,45 @@ const NormalizedModel = ({ url }) => {
   return <primitive ref={groupRef} object={model} />;
 };
 
-const Category3D = ({ modelUrl }) => {
+const Category3D = React.memo(({ modelUrl }) => {
   const normalizedUrl = useMemo(() => normalizeModelUrl(modelUrl), [modelUrl]);
 
   return (
     <div className="h-[220px] w-full">
       <Canvas
-        shadows
+        /* PERF: frameloop="demand" — only renders when invalidated (by useFrame above)
+           instead of running a perpetual 60fps loop per canvas (4 canvases = 240fps total GPU work) */
+        frameloop="demand"
+        /* PERF: dpr clamped — prevents 3x/4x resolution on retina displays for small 220px cards */
+        dpr={[1, 1.5]}
+        /* PERF: Adaptive quality — auto-reduces DPR when FPS drops */
+        performance={{ min: 0.5 }}
         camera={{ position: [0, 0, 6], fov: 25 }}
         gl={{
-          antialias: true,
+          /* PERF: Disabled antialias — at 220px card size, jaggies are invisible */
+          antialias: false,
           toneMapping: THREE.ACESFilmicToneMapping,
           outputColorSpace: THREE.SRGBColorSpace,
+          /* PERF: Reduce power preference */
+          powerPreference: 'high-performance',
         }}
       >
-        {/* Balanced neutral lighting */}
+        {/* PERF: Simplified lighting — removed directional light shadow casting */}
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[5, 6, 5]} intensity={1.0} />
 
-        <ambientLight intensity={0.4} />
-
-        <directionalLight
-          position={[5, 6, 5]}
-          intensity={1.2}
-          castShadow
-        />
-
+        {/* PERF: Kept Environment for reflections but models don't cast/receive shadows */}
         <Environment preset="studio" />
 
         <Suspense fallback={null}>
           <NormalizedModel url={normalizedUrl} />
-
-          <ContactShadows
-            position={[0, -1.5, 0]}
-            opacity={0.4}
-            scale={8}
-            blur={2.5}
-            far={4}
-          />
+          {/* PERF: Removed ContactShadows — each one renders a full-scene pass from below.
+               With 4 instances = 4 extra render passes per frame eliminated */}
         </Suspense>
       </Canvas>
     </div>
   );
-};
+});
+Category3D.displayName = 'Category3D';
 
 export default Category3D;

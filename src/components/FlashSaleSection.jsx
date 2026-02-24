@@ -40,4 +40,5 @@ const FlashSaleSection = () => {
   );
 };
 
-export default FlashSaleSection;
+/* PERF: React.memo — static promotional content */
+export default React.memo(FlashSaleSection);

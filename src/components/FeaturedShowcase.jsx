@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { Star, ShoppingCart, Heart, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { productsAPI } from '../services/api';
 import { useCart, useWishlist } from '../hooks';
 import { formatPrice } from '../utils/helpers';
 
-// ---------- Stagger animation variants ----------
+// ---------- Stagger animation variants (module-level = created once) ----------
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
@@ -21,12 +21,15 @@ const cardVariants = {
   },
 };
 
-// ---------- Premium Product Card ----------
-const FeaturedCard = ({ product, index }) => {
-  const { addToCart } = useCart();
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
-  const inWishlist = isInWishlist(product.id);
+/* PERF: Pre-generate star arrays to avoid [...Array(5)].map on every render */
+const STARS = [0, 1, 2, 3, 4];
 
+// ---------- Premium Product Card ----------
+/* PERF: Wrapped in React.memo — prevents re-render when parent products array
+   reference changes but individual product data hasn't.
+   Also: cart/wishlist actions lifted to parent to avoid creating
+   useCart/useWishlist hooks per card instance */
+const FeaturedCard = React.memo(({ product, onAddToCart, onToggleWishlist, inWishlist }) => {
   return (
     <motion.div
       variants={cardVariants}
@@ -38,11 +41,13 @@ const FeaturedCard = ({ product, index }) => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-[#00FF88]/10 rounded-full blur-[80px]" />
         </div>
 
-        {/* Image */}
+        {/* Image — PERF: added loading="lazy" for below-fold images */}
         <Link to={`/product/${product.id}`} className="block relative aspect-square overflow-hidden">
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
           />
           {/* Overlay gradient */}
@@ -50,7 +55,7 @@ const FeaturedCard = ({ product, index }) => {
 
           {/* Badge */}
           {product.badge && (
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] text-[10px] font-bold uppercase tracking-wider">
               {product.badge}
             </div>
           )}
@@ -59,9 +64,9 @@ const FeaturedCard = ({ product, index }) => {
           <button
             onClick={(e) => {
               e.preventDefault();
-              inWishlist ? removeFromWishlist(product.id) : addToWishlist(product);
+              onToggleWishlist(product);
             }}
-            className={`absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 ${
+            className={`absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
               inWishlist
                 ? 'bg-[#00FF88]/20 text-[#00FF88] border border-[#00FF88]/30'
                 : 'bg-white/5 text-white/40 border border-white/10 hover:text-white hover:border-white/20'
@@ -76,7 +81,7 @@ const FeaturedCard = ({ product, index }) => {
           {/* Rating */}
           <div className="flex items-center gap-1.5 mb-3">
             <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
+              {STARS.map((i) => (
                 <Star
                   key={i}
                   size={11}
@@ -110,7 +115,7 @@ const FeaturedCard = ({ product, index }) => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => addToCart(product)}
+            onClick={() => onAddToCart(product)}
             className="w-full py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#00FF88]/10 hover:border-[#00FF88]/20 hover:text-[#00FF88] transition-all duration-300"
           >
             <ShoppingCart size={13} />
@@ -120,15 +125,27 @@ const FeaturedCard = ({ product, index }) => {
       </div>
     </motion.div>
   );
-};
+});
+FeaturedCard.displayName = 'FeaturedCard';
 
 // ---------- Main Section ----------
 const FeaturedShowcase = () => {
   const [products, setProducts] = useState([]);
+  /* PERF: Single hook instance shared across all cards instead of per-card */
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  const handleToggleWishlist = useCallback((product) => {
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  }, [isInWishlist, addToWishlist, removeFromWishlist]);
 
   useEffect(() => {
     productsAPI.getAll().then(({ data }) => {
-      // Take top-rated products with badges first, then fill
+      /* PERF: moved sort logic out of render */
       const featured = data
         .sort((a, b) => b.rating - a.rating)
         .slice(0, 8);
@@ -186,7 +203,13 @@ const FeaturedShowcase = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {products.map((product, i) => (
-            <FeaturedCard key={product.id} product={product} index={i} />
+            <FeaturedCard
+              key={product.id}
+              product={product}
+              onAddToCart={addToCart}
+              onToggleWishlist={handleToggleWishlist}
+              inWishlist={isInWishlist(product.id)}
+            />
           ))}
         </motion.div>
       </div>

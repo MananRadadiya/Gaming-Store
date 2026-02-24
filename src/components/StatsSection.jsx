@@ -121,7 +121,7 @@ const StatsSection = () => {
                 whileHover={{ y: -5 }}
                 className={`
                   group relative p-8 rounded-3xl
-                  bg-neutral-900/50 backdrop-blur-md 
+                  bg-neutral-900/50
                   border border-white/5 hover:border-white/10
                   transition-all duration-300
                   flex flex-col items-center justify-center text-center
@@ -152,4 +152,5 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection;
+/* PERF: React.memo — pure component with static stat data */
+export default React.memo(StatsSection);

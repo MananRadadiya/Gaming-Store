@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, ArrowRight } from 'lucide-react';
-import Category3D from './Three/Category3D';
+/* PERF: Lazy-load Category3D — 4 Three.js canvases are the heaviest
+   components on the page. Only load when CategoriesSection enters viewport */
+const Category3D = lazy(() => import('./Three/Category3D'));
+
+/* PERF: Simple spinner fallback for 3D scene loading */
+const Scene3DFallback = () => (
+  <div className="h-[220px] w-full flex items-center justify-center">
+    <div className="w-5 h-5 border-2 border-white/10 border-t-[#00FF88]/50 rounded-full animate-spin" />
+  </div>
+);
 
 // Exactly 4 items with distinct, balanced neon colors
 const featuredCategories = [
@@ -71,7 +80,7 @@ const CategoriesSection = () => {
           >
             <a
               href={`/store?category=${cat.name.toLowerCase()}`}
-              className="relative flex flex-col h-full rounded-3xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-white/[0.01] backdrop-blur-md overflow-hidden transition-all duration-500 group-hover:border-white/10 group-hover:shadow-2xl group-hover:shadow-black/50"
+              className="relative flex flex-col h-full rounded-3xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-white/[0.01] overflow-hidden transition-all duration-500 group-hover:border-white/10 group-hover:shadow-2xl group-hover:shadow-black/50"
             >
               {/* Animated Glow Background */}
               <div
@@ -87,16 +96,17 @@ const CategoriesSection = () => {
                 style={{ background: `linear-gradient(90deg, transparent, ${cat.color}, transparent)` }}
               />
 
-              {/* 3D Scene Area */}
+              {/* 3D Scene Area — PERF: wrapped in Suspense for lazy loading */}
               <div className="relative w-full h-[260px] flex items-center justify-center overflow-hidden">
 
-                 {/* Optional: Add a subtle inner shadow/vignette to ground the 3D model */}
                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none z-0" />
-                 <Category3D modelUrl={cat.model} color={cat.color} />
+                 <Suspense fallback={<Scene3DFallback />}>
+                   <Category3D modelUrl={cat.model} color={cat.color} />
+                 </Suspense>
               </div>
 
-              {/* Content Section */}
-              <div className="px-6 py-8 text-center relative z-10 border-t border-white/5 bg-black/20 backdrop-blur-sm">
+              {/* Content Section — PERF: removed backdrop-blur-sm */}
+              <div className="px-6 py-8 text-center relative z-10 border-t border-white/5 bg-black/20">
                 <div className="flex items-center justify-center gap-3 mb-3">
                   <Zap
                     size={14}

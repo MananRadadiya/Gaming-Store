@@ -104,7 +104,7 @@ const BuiltForChampions = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 * i + 0.3 }}
-                  className="group flex items-center gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#00FF88]/20 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,255,136,0.06)]"
+                  className="group flex items-center gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#00FF88]/20 transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,255,136,0.06)]"
                 >
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#00FF88]/10 to-transparent border border-[#00FF88]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <stat.icon size={22} className="text-[#00FF88]" />
@@ -123,4 +123,5 @@ const BuiltForChampions = () => {
   );
 };
 
-export default BuiltForChampions;
+/* PERF: React.memo — static content, never needs re-render */
+export default React.memo(BuiltForChampions);

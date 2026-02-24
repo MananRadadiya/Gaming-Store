@@ -6,7 +6,8 @@ import {
   useSpring,
   AnimatePresence,
 } from 'framer-motion';
-import useMousePosition from '../hooks/useMousePosition';
+/* PERF: Removed useMousePosition import — mouse tracking now uses
+   motion values directly, eliminating React re-renders on mouse move */
 
 /* ═══════════════════════════════════════════════════════════════════════
    DECORATIVE ELEMENTS — refined, minimal, no product images
@@ -52,8 +53,11 @@ const useIsMobile = () => {
   useEffect(() => {
     const check = () => setMobile(window.innerWidth < 768);
     check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    /* PERF: debounce resize — no need for rapid resize tracking */
+    let timeout;
+    const debounced = () => { clearTimeout(timeout); timeout = setTimeout(check, 200); };
+    window.addEventListener('resize', debounced);
+    return () => { window.removeEventListener('resize', debounced); clearTimeout(timeout); };
   }, []);
   return mobile;
 };
@@ -70,7 +74,8 @@ const GridFloor = React.memo(() => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let raf;
-    const dpr = window.devicePixelRatio || 1;
+    /* PERF: Clamp DPR to 2 — background decor doesn't need 3x resolution */
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const resize = () => {
       canvas.width = window.innerWidth * dpr;
@@ -78,10 +83,21 @@ const GridFloor = React.memo(() => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
-    window.addEventListener('resize', resize);
+    /* PERF: debounce resize */
+    let resizeTimeout;
+    const debouncedResize = () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(resize, 200); };
+    window.addEventListener('resize', debouncedResize);
 
     let offset = 0;
-    const draw = () => {
+    /* PERF: Throttle grid animation to ~30fps — subtle animation doesn't need 60fps */
+    let lastTime = 0;
+    const FRAME_INTERVAL = 1000 / 30;
+
+    const draw = (now) => {
+      raf = requestAnimationFrame(draw);
+      if (now - lastTime < FRAME_INTERVAL) return;
+      lastTime = now;
+
       const w = window.innerWidth;
       const h = window.innerHeight;
       ctx.clearRect(0, 0, w, h);
@@ -104,8 +120,8 @@ const GridFloor = React.memo(() => {
         ctx.stroke();
       }
 
-      // Vertical lines — converge to vanish point
-      const cols = 20;
+      /* PERF: Reduced columns from 20 to 10 — halves draw calls, barely visible */
+      const cols = 10;
       for (let i = -cols; i <= cols; i++) {
         const baseX = vanishX + i * spacing + (offset % spacing);
         ctx.globalAlpha = 0.04;
@@ -118,12 +134,12 @@ const GridFloor = React.memo(() => {
 
       ctx.globalAlpha = 1;
       offset += 0.12;
-      raf = requestAnimationFrame(draw);
     };
 
-    draw();
+    raf = requestAnimationFrame(draw);
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(resizeTimeout);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -150,7 +166,8 @@ const ParticleField = React.memo(() => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let raf;
-    const dpr = window.devicePixelRatio || 1;
+    /* PERF: Clamp DPR */
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const resize = () => {
       canvas.width = window.innerWidth * dpr;
@@ -158,20 +175,55 @@ const ParticleField = React.memo(() => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
-    window.addEventListener('resize', resize);
+    let resizeTimeout;
+    const debouncedResize = () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(resize, 200); };
+    window.addEventListener('resize', debouncedResize);
 
-    const count = Math.min(45, Math.floor(window.innerWidth / 30));
-    const particles = Array.from({ length: count }, () => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2,
-      r: Math.random() * 1.5 + 0.3,
-      alpha: Math.random() * 0.35 + 0.1,
-      hue: [156, 190, 280][Math.floor(Math.random() * 3)], // green, cyan, purple
-    }));
+    /* PERF: Reduced particle count from 45 to 25 */
+    const count = Math.min(25, Math.floor(window.innerWidth / 50));
+    const hues = [156, 190, 280];
 
-    const animate = () => {
+    /* PERF: Pre-render particle glow sprites to offscreen canvases.
+       Before: createRadialGradient called count*60 times/sec (expensive)
+       After: 3 pre-baked sprite images, drawn via drawImage (GPU-accelerated) */
+    const spriteSize = 24;
+    const sprites = hues.map(hue => {
+      const off = document.createElement('canvas');
+      off.width = spriteSize;
+      off.height = spriteSize;
+      const offCtx = off.getContext('2d');
+      const half = spriteSize / 2;
+      const grad = offCtx.createRadialGradient(half, half, 0, half, half, half);
+      grad.addColorStop(0, `hsla(${hue}, 100%, 65%, 0.5)`);
+      grad.addColorStop(0.3, `hsla(${hue}, 100%, 80%, 0.3)`);
+      grad.addColorStop(1, `hsla(${hue}, 100%, 65%, 0)`);
+      offCtx.fillStyle = grad;
+      offCtx.fillRect(0, 0, spriteSize, spriteSize);
+      return off;
+    });
+
+    const particles = Array.from({ length: count }, () => {
+      const hueIdx = Math.floor(Math.random() * 3);
+      return {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        r: Math.random() * 1.5 + 0.3,
+        alpha: Math.random() * 0.35 + 0.1,
+        hueIdx,
+      };
+    });
+
+    /* PERF: Throttle to ~30fps */
+    let lastTime = 0;
+    const FRAME_INTERVAL = 1000 / 30;
+
+    const animate = (now) => {
+      raf = requestAnimationFrame(animate);
+      if (now - lastTime < FRAME_INTERVAL) return;
+      lastTime = now;
+
       const w = window.innerWidth;
       const h = window.innerHeight;
       ctx.clearRect(0, 0, w, h);
@@ -184,28 +236,20 @@ const ParticleField = React.memo(() => {
         if (p.y < 0) p.y = h;
         if (p.y > h) p.y = 0;
 
-        // Soft glow dot
-        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
-        grad.addColorStop(0, `hsla(${p.hue}, 100%, 65%, ${p.alpha})`);
-        grad.addColorStop(1, `hsla(${p.hue}, 100%, 65%, 0)`);
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-
-        // Bright core
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 100%, 80%, ${p.alpha * 1.5})`;
-        ctx.fill();
+        /* PERF: Use pre-rendered sprite instead of per-frame gradient creation */
+        const drawSize = p.r * 6;
+        ctx.globalAlpha = p.alpha;
+        ctx.drawImage(sprites[p.hueIdx], p.x - drawSize / 2, p.y - drawSize / 2, drawSize, drawSize);
       });
 
-      raf = requestAnimationFrame(animate);
+      ctx.globalAlpha = 1;
     };
-    animate();
+
+    raf = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(resizeTimeout);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -241,11 +285,13 @@ const RippleBurst = ({ x, y, onDone }) => (
    FLOATING ITEM — reusable anti-gravity wrapper
    ═════════════════════════════════════════════════════════════════════ */
 
+/* PERF: FloatingItem now accepts mouseX/mouseY as motion values.
+   Uses useTransform chains to derive position — zero React re-renders on mouse move */
 const FloatingItem = React.memo(({
   children,
   depth = 0.5,
-  mouseX = 0,
-  mouseY = 0,
+  mouseXMotion,
+  mouseYMotion,
   reducedMotion = false,
   isMobile = false,
   className = '',
@@ -256,23 +302,19 @@ const FloatingItem = React.memo(({
 }) => {
   const factor = reducedMotion ? 0 : (isMobile ? depth * 12 : depth * 35);
 
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const rotX = useMotionValue(0);
-  const rotY = useMotionValue(0);
+  /* PERF: Derive transforms from motion values via useTransform.
+     When mouseXMotion changes, sx updates internally in Framer Motion
+     without triggering React reconciliation */
+  const rawX = useTransform(mouseXMotion, v => -v * factor);
+  const rawY = useTransform(mouseYMotion, v => -v * factor);
+  const rotXRaw = useTransform(mouseYMotion, v => v * depth * 5);
+  const rotYRaw = useTransform(mouseXMotion, v => -v * depth * 5);
 
   const springConfig = { stiffness: 50, damping: 22, mass: 1.4 };
-  const sx = useSpring(mx, springConfig);
-  const sy = useSpring(my, springConfig);
-  const srx = useSpring(rotX, { stiffness: 30, damping: 20 });
-  const sry = useSpring(rotY, { stiffness: 30, damping: 20 });
-
-  useEffect(() => {
-    mx.set(-mouseX * factor);
-    my.set(-mouseY * factor);
-    rotX.set(mouseY * depth * 5);
-    rotY.set(-mouseX * depth * 5);
-  }, [mouseX, mouseY, factor, depth, mx, my, rotX, rotY]);
+  const sx = useSpring(rawX, springConfig);
+  const sy = useSpring(rawY, springConfig);
+  const srx = useSpring(rotXRaw, { stiffness: 30, damping: 20 });
+  const sry = useSpring(rotYRaw, { stiffness: 30, damping: 20 });
 
   // Idle sine-wave float
   const idleY = useMotionValue(0);
@@ -282,9 +324,16 @@ const FloatingItem = React.memo(({
     if (reducedMotion) return;
     let raf;
     const phase = index * 1400;
-    const tick = () => {
+    /* PERF: Throttle idle float to ~30fps */
+    let lastTime = 0;
+    const INTERVAL = 1000 / 30;
+    const tick = (now) => {
+      raf = requestAnimationFrame(tick);
+      if (now - lastTime < INTERVAL) return;
+      lastTime = now;
       const t = (Date.now() + phase) / idleSpeed;
       idleY.set(Math.sin(t * Math.PI * 2) * idleAmplitude);
+      raf = requestAnimationFrame(tick);
       raf = requestAnimationFrame(tick);
     };
     tick();
@@ -343,6 +392,7 @@ const NeonRing = ({ color, size, opacity = 0.3 }) => (
   />
 );
 
+/* PERF: Removed backdrop-blur from decorative GlassCard — saves GPU compositing layer */
 const GlassCard = ({ color, size, opacity = 0.15 }) => (
   <div
     className="rounded-xl"
@@ -351,7 +401,6 @@ const GlassCard = ({ color, size, opacity = 0.15 }) => (
       height: size * 0.55,
       background: `linear-gradient(135deg, ${color}0A 0%, ${color}04 100%)`,
       border: `1px solid ${color}15`,
-      backdropFilter: 'blur(8px)',
       opacity,
     }}
   />
@@ -370,7 +419,8 @@ const NeonDot = ({ color, size, opacity = 0.7 }) => (
   />
 );
 
-const ShapeRenderer = ({ type, color, size, opacity }) => {
+/* PERF: Memoize ShapeRenderer to prevent re-creation */
+const ShapeRenderer = React.memo(({ type, color, size, opacity }) => {
   switch (type) {
     case 'orb':  return <NeonOrb color={color} size={size} opacity={opacity} />;
     case 'ring': return <NeonRing color={color} size={size} opacity={opacity} />;
@@ -378,7 +428,8 @@ const ShapeRenderer = ({ type, color, size, opacity }) => {
     case 'dot':  return <NeonDot color={color} size={size} opacity={opacity} />;
     default:     return null;
   }
-};
+});
+ShapeRenderer.displayName = 'ShapeRenderer';
 
 /* ═══════════════════════════════════════════════════════════════════════
    HORIZONTAL SCAN LINE — subtle cyberpunk accent
@@ -403,7 +454,34 @@ ScanLine.displayName = 'ScanLine';
    ═════════════════════════════════════════════════════════════════════ */
 
 const HeroAntiGravity = () => {
-  const { x: mouseX, y: mouseY } = useMousePosition();
+  /* PERF: Use motion values for mouse position instead of React state.
+     Mouse movement NEVER triggers React re-renders.
+     All 12 FloatingItems update via Framer Motion's internal loop,
+     completely bypassing React reconciliation. */
+  const mouseXMotion = useMotionValue(0);
+  const mouseYMotion = useMotionValue(0);
+  const rafRef = useRef(null);
+  const latestMouse = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      latestMouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
+      latestMouse.current.y = (e.clientY / window.innerHeight) * 2 - 1;
+      if (!rafRef.current) {
+        rafRef.current = requestAnimationFrame(() => {
+          mouseXMotion.set(latestMouse.current.x);
+          mouseYMotion.set(latestMouse.current.y);
+          rafRef.current = null;
+        });
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [mouseXMotion, mouseYMotion]);
+
   const reducedMotion = usePrefersReducedMotion();
   const isMobile = useIsMobile();
 
@@ -484,8 +562,8 @@ const HeroAntiGravity = () => {
         <FloatingItem
           key={`shape-${i}`}
           depth={shape.depth}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={i}
@@ -508,8 +586,8 @@ const HeroAntiGravity = () => {
         {/* Badge */}
         <FloatingItem
           depth={0.12}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={20}
@@ -519,7 +597,8 @@ const HeroAntiGravity = () => {
           style={{ position: 'relative' }}
         >
           <motion.div variants={fadeUp} className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#00FF88]/15 bg-[#00FF88]/5 backdrop-blur-xl text-[11px] font-semibold tracking-[0.3em] text-[#00FF88] uppercase">
+            {/* PERF: removed backdrop-blur-xl from badge */}
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#00FF88]/15 bg-[#00FF88]/5 text-[11px] font-semibold tracking-[0.3em] text-[#00FF88] uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00FF88] shadow-[0_0_6px_rgba(0,255,136,0.8)] animate-pulse" />
               Zero-Gravity Gaming
             </span>
@@ -529,8 +608,8 @@ const HeroAntiGravity = () => {
         {/* Headline */}
         <FloatingItem
           depth={0.18}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={21}
@@ -573,8 +652,8 @@ const HeroAntiGravity = () => {
         {/* Divider line */}
         <FloatingItem
           depth={0.08}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={25}
@@ -591,8 +670,8 @@ const HeroAntiGravity = () => {
         {/* Subheading */}
         <FloatingItem
           depth={0.1}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={22}
@@ -613,8 +692,8 @@ const HeroAntiGravity = () => {
         {/* CTAs */}
         <FloatingItem
           depth={0.08}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={23}
@@ -646,7 +725,7 @@ const HeroAntiGravity = () => {
               </span>
             </motion.a>
 
-            {/* Secondary CTA */}
+            {/* Secondary CTA — PERF: removed backdrop-blur-xl */}
             <motion.a
               href="/deals"
               whileHover={{
@@ -654,7 +733,7 @@ const HeroAntiGravity = () => {
                 borderColor: 'rgba(0,255,136,0.4)',
               }}
               whileTap={{ scale: 0.97 }}
-              className="group relative px-10 py-4 bg-white/[0.03] border border-white/10 backdrop-blur-xl text-white/70 font-semibold text-sm sm:text-base tracking-[0.2em] uppercase transition-all duration-300 hover:text-[#00FF88] hover:bg-white/[0.06]"
+              className="group relative px-10 py-4 bg-white/[0.03] border border-white/10 text-white/70 font-semibold text-sm sm:text-base tracking-[0.2em] uppercase transition-all duration-300 hover:text-[#00FF88] hover:bg-white/[0.06]"
             >
               <span className="relative z-10">FLASH DEALS</span>
               <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gradient-to-r from-[#00FF88] to-[#00E0FF] group-hover:w-full transition-all duration-500 ease-out" />
@@ -663,10 +742,11 @@ const HeroAntiGravity = () => {
         </FloatingItem>
 
         {/* Glass stats bar */}
+        {/* Glass stats bar — PERF: removed backdrop-blur-md */}
         <FloatingItem
           depth={0.05}
-          mouseX={mouseX}
-          mouseY={mouseY}
+          mouseXMotion={mouseXMotion}
+          mouseYMotion={mouseYMotion}
           reducedMotion={reducedMotion}
           isMobile={isMobile}
           index={24}
@@ -679,7 +759,7 @@ const HeroAntiGravity = () => {
             variants={fadeUp}
             className="mt-14 mx-auto max-w-xl"
           >
-            <div className="flex items-center justify-center gap-0 rounded-full border border-white/[0.06] bg-white/[0.02] backdrop-blur-md py-3 px-4 sm:px-8">
+            <div className="flex items-center justify-center gap-0 rounded-full border border-white/[0.06] bg-white/[0.02] py-3 px-4 sm:px-8">
               {[
                 { value: '500K+', label: 'Gamers' },
                 { value: '<1ms', label: 'Latency' },

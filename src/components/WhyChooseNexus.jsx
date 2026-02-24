@@ -71,7 +71,7 @@ const WhyChooseNexus = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-4"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4"
                     >
                         <span className="w-2 h-2 rounded-full bg-nexus-accent animate-pulse" />
                         <span className="text-xs font-bold tracking-widest text-white/80 uppercase">The Nexus Standard</span>
@@ -106,8 +106,8 @@ const WhyChooseNexus = () => {
                             whileHover={{ y: -5 }}
                             className="group relative h-full"
                         >
-                            {/* Card Container */}
-                            <div className="relative h-full bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 overflow-hidden transition-all duration-300 hover:bg-zinc-900/60 hover:border-white/10 hover:shadow-2xl hover:shadow-nexus-accent/10">
+                            {/* Card Container — PERF: removed backdrop-blur-xl */}
+                            <div className="relative h-full bg-zinc-900/40 border border-white/5 rounded-3xl p-8 overflow-hidden transition-all duration-300 hover:bg-zinc-900/60 hover:border-white/10 hover:shadow-2xl hover:shadow-nexus-accent/10">
 
                                 {/* Gradient Blob Effect on Hover */}
                                 <div className={`absolute -right-10 -top-10 w-32 h-32 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 blur-[50px] transition-opacity duration-500`} />
@@ -148,4 +148,5 @@ const WhyChooseNexus = () => {
     );
 };
 
-export default WhyChooseNexus;
+/* PERF: React.memo — static content, never needs re-render */
+export default React.memo(WhyChooseNexus);
