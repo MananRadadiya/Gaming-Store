@@ -1,24 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-const API_URL = 'http://localhost:3001';
+import { getDbData } from '../services/api';
 
 // ---------- Async Thunks ----------
 
-/** Login: verify email+password against JSON Server */
+/** Login: verify email+password against db.json users */
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ email, password }, { rejectWithValue }) => {
     try {
-      const { data: users } = await axios.get(
-        `${API_URL}/users?email=${email}&password=${password}`
+      const db = await getDbData();
+      const users = Array.isArray(db.users) ? db.users : [];
+      const user = users.find(
+        (u) => u.email === email && u.password === password
       );
 
-      if (users.length === 0) {
+      if (!user) {
         return rejectWithValue('Invalid email or password');
       }
-
-      const user = users[0];
 
       // Simulate a JWT token
       const token = btoa(
@@ -30,7 +28,7 @@ export const loginUser = createAsyncThunk(
 
       return { user: safeUser, token };
     } catch (err) {
-      return rejectWithValue('Server error — make sure JSON Server is running on port 3001');
+      return rejectWithValue('Failed to authenticate. Please try again.');
     }
   }
 );
@@ -40,9 +38,10 @@ export const fetchUsers = createAsyncThunk(
   'auth/fetchUsers',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`${API_URL}/users`);
+      const db = await getDbData();
+      const users = Array.isArray(db.users) ? db.users : [];
       // Strip passwords before storing
-      return data.map(({ password, ...rest }) => rest);
+      return users.map(({ password, ...rest }) => rest);
     } catch (err) {
       return rejectWithValue('Failed to fetch users');
     }

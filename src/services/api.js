@@ -73,7 +73,7 @@ const toUnifiedProduct = (item, categoryKey) => {
 let _dbCache = null;
 let _dbPromise = null;
 
-const getDbData = () => {
+export const getDbData = () => {
   if (_dbCache) return Promise.resolve(_dbCache);
   if (_dbPromise) return _dbPromise;
 

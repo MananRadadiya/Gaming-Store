@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Save, ArrowLeft, Loader2, ImagePlus, X } from 'lucide-react';
 import { addProduct, updateProduct, clearAdminMessage } from '../../store/adminSlice';
-import axios from 'axios';
+import { getDbData } from '../../services/api';
 
 const CATEGORIES = [
   { value: 'keyboards', label: 'Keyboard' },
@@ -48,9 +48,14 @@ const AdminProductForm = () => {
   useEffect(() => {
     if (isEditMode && editCategory && editId) {
       setFetchingProduct(true);
-      axios
-        .get(`http://localhost:3001/${editCategory}/${editId}`)
-        .then(({ data }) => {
+      getDbData()
+        .then((db) => {
+          const items = Array.isArray(db[editCategory]) ? db[editCategory] : [];
+          const data = items.find((p) => String(p.id) === String(editId));
+          if (!data) throw new Error('Product not found');
+          return data;
+        })
+        .then((data) => {
           setForm({
             title: data.title || '',
             brand: data.brand || '',

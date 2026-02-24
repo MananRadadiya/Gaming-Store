@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-const API_URL = 'http://localhost:3001';
+import { getDbData } from '../services/api';
 
 // ─── Async Thunks ───
 
@@ -9,8 +7,10 @@ export const fetchCommunityPosts = createAsyncThunk(
   'community/fetchPosts',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`${API_URL}/communityPosts?_sort=timestamp&_order=desc`);
-      return data;
+      const db = await getDbData();
+      const posts = Array.isArray(db.communityPosts) ? db.communityPosts : [];
+      // Sort newest first (json-server did this via _sort=timestamp&_order=desc)
+      return [...posts].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     } catch (err) {
       return rejectWithValue('Failed to fetch posts');
     }
@@ -21,8 +21,8 @@ export const fetchCommunityPlayers = createAsyncThunk(
   'community/fetchPlayers',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`${API_URL}/communityPlayers`);
-      return data;
+      const db = await getDbData();
+      return Array.isArray(db.communityPlayers) ? db.communityPlayers : [];
     } catch (err) {
       return rejectWithValue('Failed to fetch players');
     }

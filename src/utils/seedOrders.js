@@ -2,13 +2,11 @@
  * ═══════════════════════════════════════════════════════════════
  * Order Seed Data — Pre-populates localStorage with realistic
  * orders so the customer-facing Orders page looks like a real site.
- * Fetches real product data from db.json via JSON Server.
+ * Fetches real product data from /db.json via the shared cache.
  * ═══════════════════════════════════════════════════════════════
  */
 
-import axios from 'axios';
-
-const API_URL = import.meta.env?.VITE_API_URL || 'http://localhost:3001';
+import { getDbData } from '../services/api';
 
 const CATEGORY_KEYS = [
   'keyboards', 'mouse', 'headsets', 'monitors', 'mousepads',
@@ -22,20 +20,15 @@ const CATEGORY_LABELS = {
   graphicscards: 'Graphics Card',
 };
 
-/** Fetch all products from db.json and build a lookup map by id */
+/** Build a product catalog lookup map from the cached db.json */
 const fetchProductCatalog = async () => {
   const catalog = {};
   try {
-    const responses = await Promise.all(
-      CATEGORY_KEYS.map((key) =>
-        axios.get(`${API_URL}/${key}`)
-          .then((r) => ({ key, data: r.data }))
-          .catch(() => ({ key, data: [] }))
-      )
-    );
-    for (const { key, data } of responses) {
-      if (!Array.isArray(data)) continue;
-      for (const item of data) {
+    const db = await getDbData();
+    for (const key of CATEGORY_KEYS) {
+      const items = db[key];
+      if (!Array.isArray(items)) continue;
+      for (const item of items) {
         catalog[item.id] = {
           name: item.title,
           image: item.images?.[0] || '',
@@ -45,7 +38,7 @@ const fetchProductCatalog = async () => {
       }
     }
   } catch {
-    /* API unavailable — catalog stays empty */
+    /* db.json unavailable — catalog stays empty */
   }
   return catalog;
 };

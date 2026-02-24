@@ -1,34 +1,27 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { getDbData } from '../services/api';
 
-const API_URL = 'http://localhost:3001';
+const CATEGORY_KEYS = [
+  'keyboards', 'mouse', 'headsets', 'monitors',
+  'mousepads', 'gamingchairs', 'controllers',
+  'webcams', 'microphones', 'graphicscards',
+];
 
 // ---------- Async Thunks ----------
 
-/** Fetch all products (from all category endpoints) for admin management */
+/** Fetch all products from db.json for admin management */
 export const fetchAdminProducts = createAsyncThunk(
   'admin/fetchProducts',
   async (_, { rejectWithValue }) => {
     try {
-      // Fetch from every category endpoint in parallel
-      const categories = [
-        'keyboards', 'mouse', 'headsets', 'monitors',
-        'mousepads', 'gamingchairs', 'controllers',
-        'webcams', 'microphones', 'graphicscards',
-      ];
-      const responses = await Promise.all(
-        categories.map((cat) => axios.get(`${API_URL}/${cat}`).catch(() => ({ data: [] })))
-      );
-
+      const db = await getDbData();
       const products = [];
-      responses.forEach((res, idx) => {
-        if (Array.isArray(res.data)) {
-          res.data.forEach((item) => {
-            products.push({ ...item, _category: categories[idx] });
-          });
+      CATEGORY_KEYS.forEach((cat) => {
+        const items = db[cat];
+        if (Array.isArray(items)) {
+          items.forEach((item) => products.push({ ...item, _category: cat }));
         }
       });
-
       return products;
     } catch (err) {
       return rejectWithValue('Failed to fetch products');
@@ -36,38 +29,40 @@ export const fetchAdminProducts = createAsyncThunk(
   }
 );
 
-/** Add a product to a specific category */
+/** Add a product (in-memory only — no backend in production) */
 export const addProduct = createAsyncThunk(
   'admin/addProduct',
   async ({ category, product }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`${API_URL}/${category}`, product);
-      return { ...data, _category: category };
+      const newProduct = {
+        ...product,
+        id: Date.now(),
+        _category: category,
+      };
+      return newProduct;
     } catch (err) {
       return rejectWithValue('Failed to add product');
     }
   }
 );
 
-/** Update an existing product */
+/** Update an existing product (in-memory only) */
 export const updateProduct = createAsyncThunk(
   'admin/updateProduct',
   async ({ category, id, product }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.put(`${API_URL}/${category}/${id}`, product);
-      return { ...data, _category: category };
+      return { ...product, id, _category: category };
     } catch (err) {
       return rejectWithValue('Failed to update product');
     }
   }
 );
 
-/** Delete a product */
+/** Delete a product (in-memory only) */
 export const deleteProduct = createAsyncThunk(
   'admin/deleteProduct',
   async ({ category, id }, { rejectWithValue }) => {
     try {
-      await axios.delete(`${API_URL}/${category}/${id}`);
       return { category, id };
     } catch (err) {
       return rejectWithValue('Failed to delete product');
@@ -75,13 +70,19 @@ export const deleteProduct = createAsyncThunk(
   }
 );
 
-/** Fetch orders */
+/** Fetch orders from localStorage + db.json seed data */
 export const fetchOrders = createAsyncThunk(
   'admin/fetchOrders',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`${API_URL}/orders`);
-      return data;
+      // Merge localStorage orders with db.json seed orders
+      const localOrders = JSON.parse(localStorage.getItem('nexus_orders')) || [];
+      const db = await getDbData();
+      const dbOrders = Array.isArray(db.orders) ? db.orders : [];
+      // Combine, deduplicate by id, newest first
+      const merged = new Map();
+      [...dbOrders, ...localOrders].forEach((o) => merged.set(o.id, o));
+      return [...merged.values()].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     } catch (err) {
       return rejectWithValue('Failed to fetch orders');
     }
